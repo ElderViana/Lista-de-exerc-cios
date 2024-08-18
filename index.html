@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head lang="pt-br">
+    <meta charset="UTF-8">
+    <meta name="viwport" content="width=device-width, initial scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Lista de exercícios</title>
+</head>
+<body>
+    <div class="list">
+        <header>
+            <h1>Lista de exercícios</h1>
+        </header>
+        <form class="choice">
+            <div class="combobox">
+                <select name="marker" id="model">
+                    <option value="" disabled selected>Modelo de treino</option>
+                    <option value="ABC">ABC</option> 
+                    <option value="ABCDE">ABCDE</option>
+                </select>
+                <select name="markert" id="weekdays">
+                    <option value="" disabled selected>Quantidade de dias</option>
+                    <option value="5 dias">5 dias</option>
+                    <opton value="6 dias">6 dias</opton>
+                </select>
+            </div>
+            <div class="add">
+                <input type="submit" value="Adicionar" class="btnAdd">
+            </div>
+        </form>
+        <form>
+            <div class="combobox">
+                <select name="marker" id="muscleGroup">
+                    <option value="" disabled selected>Grupo muscular</option>
+                    <option value="Peito">Peito</option>
+                    <option value="Costas">Costas</option>
+                    <option value="Bíceps + Antibraço + Trapézio">Bíceps + Antibraço + Trapézio</option>
+                    <option value="Tríceps + Ombro">Tríceps + Ombro</option>
+                    <option value="Perna">Perna</option>
+                    <option value="Abdominal oblíco">Abdominal oblíco</option>
+                    <option value="Abdominal superior && ferior">Abdomial superior && iferior </option>
+                </select>
+            </div>
+            <div class="add">
+                <input type="submit" value="Adicionar" class="btnAdd">
+            </div>
+        </form>
+        <form>
+            <div class="checked">
+                <input type="checkbox" id="biceps">Rosca direta
+            </div>
+            <div class="add">
+                <input type="submit" value="Adicionar" class="btnAdd">
+            </div>
+        </form>
+        <table id="exerciseList">
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</body>
