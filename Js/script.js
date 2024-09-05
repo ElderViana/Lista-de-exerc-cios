@@ -63,12 +63,17 @@ const createList = () => {
 createList()
 
 let muscleGroup = document.createElement('input');
+let p = document.createElement('p');
 muscleGroup.type = 'checkbox';
-muscleGroup.value = 'Tríceps';
+muscleGroup.text = 'Tríceps';
+
+
+p.textContent = 'tríceps dddddddddddddddddddddddddddddddddddddddddd'
 
 div.appendChild(muscleGroup);
+div.appendChild(p);
 b.appendChild(div);
 
-console.log(muscleGroup)
+console.log(p)
 
 
