@@ -24,7 +24,7 @@ const exerciseList = [
     {group: 'Ombro', name: 'Desenvolvimento na máquina', series: '3 ou 4', repetitions: '8 a 15'},
     {group: 'Ombro', name: 'Elevação lateral no cross', series: '3 ou 4', repetitions: '8 a 15'},
     {group: 'Ombro', name: 'Desenvolvimento frontal com barra', series: '3 ou 4', repetitions: '8 a 15'},
-    {group: 'Trapézio', name: 'Encolhimento de ombro com barra', series: '3 ou 4', repetitions: '8 a 15'}
+    {group: 'Trapézio', name: 'Encolhimento de ombro com barra', series: '3 ou 4', repetitions: '8 a 15'},
     {group: 'Trapézio', name: 'Encolhimento de ombro com halteres', series: '3 ou 4', repetitions: '8 a 15'},
     {group: 'Perna', name: 'Leg press', series: '3 ou 4', repetitions: '8 a 15'},
     {group: 'Perna', name: 'Agachamento barra solta', series: '3 ou 4', repetitions: '8 a 15'},
@@ -50,10 +50,25 @@ const exerciseList = [
 
 ];
 
+console.log(5)
+
+const div = document.getElementById('muscleList');
+const b = document.getElementById('b');
+
+
 const createList = () => {
-    let muscleGroup = document.createElement('peito');
-    muscleGroup.p = 'Peito';
+  
 
 }
 createList()
-prompt()
+
+let muscleGroup = document.createElement('input');
+muscleGroup.type = 'checkbox';
+muscleGroup.value = 'Tríceps';
+
+div.appendChild(muscleGroup);
+b.appendChild(div);
+
+console.log(muscleGroup)
+
+
