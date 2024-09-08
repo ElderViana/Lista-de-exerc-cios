@@ -62,23 +62,31 @@ const createList = () => {
 }
 createList()
 
-
-let lable = document.createElement('lable');
 let muscleGroup = document.createElement('input');
-//let br = document.createElement('br');
-let p2 = document.createElement('p');
+let lable = document.createElement('lable');
 
+//let br = document.createElement('br');
+let p = document.createElement('p');
+
+
+
+
+
+
+
+lable.for = p
+lable.textContent = 'Rosca direta'
+
+//muscleGroup.id = 'id';
+
+//lable.for = muscleGroup
+p.id = 'i'
 muscleGroup.type = 'checkbox';
 
-muscleGroup.id = 'id';
-
-
-lable.for = muscleGroup
-lable. = 'Rosca direta'
-
-div.appendChild(lable);
 div.appendChild(muscleGroup);
-div.appendChild(p2);
+div.appendChild(lable);
+
+lable.appendChild(p);
 div.appendChild(br);
 b.appendChild(div);
 
