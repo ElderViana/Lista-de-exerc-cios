@@ -71,13 +71,13 @@ let p2 = document.createElement('p');
 muscleGroup.type = 'checkbox';
 
 muscleGroup.id = 'id';
-p2.textContent = 'Peito'
 
-lable.for.Id = muscleGroup
-lable.textContent = 'Ros ca direta'
+
+lable.for = muscleGroup
+lable. = 'Rosca direta'
 
 div.appendChild(lable);
-lable.appendChild(muscleGroup);
+div.appendChild(muscleGroup);
 div.appendChild(p2);
 div.appendChild(br);
 b.appendChild(div);
