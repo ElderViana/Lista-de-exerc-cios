@@ -63,7 +63,9 @@ const createList = () => {
 createList()
 
 let muscleGroup = document.createElement('input');
+let muscleGroup2 = document.createElement('input');
 let lable = document.createElement('lable');
+let lable2 = document.createElement('lable');
 
 //let br = document.createElement('br');
 let p = document.createElement('p');
@@ -76,15 +78,21 @@ let p = document.createElement('p');
 
 lable.for = p
 lable.textContent = 'Rosca direta'
+lable2.textContent = 'Rosca direta'
 
 //muscleGroup.id = 'id';
 
 //lable.for = muscleGroup
 p.id = 'i'
 muscleGroup.type = 'checkbox';
+muscleGroup2.type = 'checkbox';
 
 div.appendChild(muscleGroup);
+
 div.appendChild(lable);
+div.appendChild(muscleGroup2);
+div.appendChild(lable2);
+
 
 lable.appendChild(p);
 div.appendChild(br);
