@@ -59,26 +59,29 @@ const b = document.getElementById('b');
 
 const createList = (event) => {
     event.preventDefault();
+    for (i = 0; i < exerciseList.length; i++){
+        if(exerciseList[i].group == 'Peito') {
     let muscleGroup = document.createElement('input');
-    let muscleGroup2 = document.createElement('input');
+    //let muscleGroup2 = document.createElement('input');
     let br = document.createElement('br');
     
     
     let lable = document.createElement('lable');
-    let lable2 = document.createElement('lable');
+   // let lable2 = document.createElement('lable');
     
-    lable.textContent = 'Rosca direta'
-    lable2.textContent = 'Rosca direta'
+    lable.textContent = exerciseList[i].name
+    //lable2.textContent = 'Rosca direta'
     
     muscleGroup.type = 'checkbox';
-    muscleGroup2.type = 'checkbox';
+   // muscleGroup2.type = 'checkbox';
     
     div.appendChild(muscleGroup);
     div.appendChild(lable);
     div.appendChild(br);
-    div.appendChild(muscleGroup2);
-    div.appendChild(lable2);
-  
+   // div.appendChild(muscleGroup2);
+   // div.appendChild(lable2);
+        }
+    }
 
 }
 submit.addEventListener('click', createList);
