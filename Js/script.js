@@ -52,23 +52,36 @@ const exerciseList = [
 
 console.log(5)
 
-const div = document.getElementById('muscleList');
+const div = document.getElementById('list');
+const submit = document.getElementById('submit');
 const b = document.getElementById('b');
 
 
-const createList = () => {
+const createList = (event) => {
+    event.preventDefault();
+    let muscleGroup = document.createElement('input');
+    let muscleGroup2 = document.createElement('input');
+    let br = document.createElement('br');
+    
+    
+    let lable = document.createElement('lable');
+    let lable2 = document.createElement('lable');
+    
+    lable.textContent = 'Rosca direta'
+    lable2.textContent = 'Rosca direta'
+    
+    muscleGroup.type = 'checkbox';
+    muscleGroup2.type = 'checkbox';
+    
+    div.appendChild(muscleGroup);
+    div.appendChild(lable);
+    div.appendChild(br);
+    div.appendChild(muscleGroup2);
+    div.appendChild(lable2);
   
 
 }
-createList()
-
-let muscleGroup = document.createElement('input');
-let muscleGroup2 = document.createElement('input');
-let lable = document.createElement('lable');
-let lable2 = document.createElement('lable');
-
-//let br = document.createElement('br');
-let p = document.createElement('p');
+submit.addEventListener('click', createList);
 
 
 
@@ -76,29 +89,3 @@ let p = document.createElement('p');
 
 
 
-lable.for = p
-lable.textContent = 'Rosca direta'
-lable2.textContent = 'Rosca direta'
-
-//muscleGroup.id = 'id';
-
-//lable.for = muscleGroup
-p.id = 'i'
-muscleGroup.type = 'checkbox';
-muscleGroup2.type = 'checkbox';
-
-div.appendChild(muscleGroup);
-
-div.appendChild(lable);
-div.appendChild(muscleGroup2);
-div.appendChild(lable2);
-
-
-lable.appendChild(p);
-div.appendChild(br);
-b.appendChild(div);
-
-console.log(p)
-
-
-br
