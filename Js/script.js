@@ -63,19 +63,21 @@ const select = document.getElementById('muscleGroup');
 const createList = (event) => {
     event.preventDefault();
     for (i = 0; i < exerciseList.length; i++){
-        if(exerciseList[i].group == select[i].value) {
-    let muscleGroup = document.createElement('input');
-    let br = document.createElement('br');
-    let lable = document.createElement('lable');
-    
-    lable.textContent = exerciseList[i].name
-    
-    muscleGroup.type = 'checkbox';
- 
-    
-    div.appendChild(muscleGroup);
-    div.appendChild(lable);
-    div.appendChild(br);
+        if(exerciseList[i].group == select[i].value){
+            for (j = 0; j < exerciseList.length; j++){
+                if(exerciseList[i].group == select[j].value){
+                    let muscleGroup = document.createElement('input');
+                    let br = document.createElement('br');
+                    let lable = document.createElement('lable');
+
+                    lable.textContent = exerciseList[i].name
+                    muscleGroup.type = 'checkbox';
+                    
+                    div.appendChild(muscleGroup);
+                    div.appendChild(lable);
+                    div.appendChild(br);
+                }
+            }
  
         }
     }
