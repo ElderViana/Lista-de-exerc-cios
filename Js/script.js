@@ -65,7 +65,7 @@ const createList = (event) => {
     for (i = 0; i < exerciseList.length; i++){
         if(exerciseList[i].group == select[i].value){
             for (j = 0; j < exerciseList.length; j++){
-                if(exerciseList[i].group == select[j].value){
+                if(exerciseList[j].group == select[i].value){
                     let muscleGroup = document.createElement('input');
                     let br = document.createElement('br');
                     let lable = document.createElement('lable');
