@@ -1,7 +1,7 @@
 
 const exerciseList = [
-    {group: 'Peito', name: 'Supino reto com barra', series: '3 ou 4', repetitions: '8 a 15'},
-    {group: 'Peito', name: 'Supino reto com halteres', series: '3 ou 4', repetitions: '8 a 15'},
+    {group: 'Peito', name: 'Supino reto com barra', series: '3 ou 4', repetitions: '8 a 15', id: 'p'},
+    {group: 'Peito', name: 'Supino reto com halteres', series: '3 ou 4', repetitions: '8 a 15', id: 'd'},
     {group: 'Peito', name: 'Supino inclinado com barra', series: '3 ou 4', repetitions: '8 a 15'},
     {group: 'Peito', name: 'Supino inclinado com halteres', series: '3 ou 4', repetitions: '8 a 15'},
     {group: 'Peito', name: 'Supino declinado com barra', series: '3 ou 4', repetitions: '8 a 15'},
@@ -72,6 +72,8 @@ const createList = (event) => {
 
                     lable.textContent = exerciseList[i].name
                     muscleGroup.type = 'checkbox';
+                    muscleGroup.id = exerciseList[j].id
+                    console.log(muscleGroup.id)
                     
                     div.appendChild(muscleGroup);
                     div.appendChild(lable);
