@@ -50,17 +50,20 @@ const exerciseList = [
 
 ];
 
-console.log(5)
+
 
 const div = document.getElementById('list');
 const submit = document.getElementById('submit');
-const b = document.getElementById('b');
+
+const select = document.getElementById('muscleGroup');
+
+
 
 
 const createList = (event) => {
     event.preventDefault();
     for (i = 0; i < exerciseList.length; i++){
-        if(exerciseList[i].group == 'Peito') {
+        if(exerciseList[i].group == select[i].value.trim()) {
     let muscleGroup = document.createElement('input');
     //let muscleGroup2 = document.createElement('input');
     let br = document.createElement('br');
