@@ -82,7 +82,7 @@ const createList = (event) => {
     event.preventDefault();
     console.log(muscleGroup.value)
     let checkedList = [];
-    let idList = [];
+    let idList = ['1', '2', '3', '4', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
 
     
     for (i = 0; i < exerciseList.length; i++){
