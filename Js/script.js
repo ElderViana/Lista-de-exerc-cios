@@ -81,6 +81,8 @@ const select = document.getElementById('muscleGroup');
 const createList = (event) => {
     event.preventDefault();
     console.log(muscleGroup.value)
+    let checkedList = [];
+    let idList = [];
 
     
     for (i = 0; i < exerciseList.length; i++){
