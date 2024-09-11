@@ -109,7 +109,8 @@ const createList = (event) => {
     }
     const addList = (event) => {
         event.preventDefault();
-        console.log('u')
+        console.log(idList[0].checked == true)
+        console.log(idList)
         submit.removeEventListener('click', addList);
         submit.addEventListener('click', createList);
     }
