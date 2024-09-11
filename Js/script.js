@@ -72,6 +72,8 @@ const exerciseList = [
 
 const div = document.getElementById('list');
 const submit = document.getElementById('submit');
+const t = document.getElementById('t');
+
 
 const select = document.getElementById('muscleGroup');
 
@@ -80,6 +82,7 @@ const select = document.getElementById('muscleGroup');
 
 const createList = (event) => {
     event.preventDefault();
+    console.log(t.checked == true)
     console.log(muscleGroup.value)
     let checkedList = [];
     let idList = [];
