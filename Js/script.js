@@ -62,27 +62,30 @@ const select = document.getElementById('muscleGroup');
 
 const createList = (event) => {
     event.preventDefault();
+    console.log(muscleGroup.value)
+
+    
     for (i = 0; i < exerciseList.length; i++){
-        if(exerciseList[i].group == select[i].value){
-            for (j = 0; j < exerciseList.length; j++){
-                if(exerciseList[j].group == select[i].value){
+        if(exerciseList[i].group == select.value){
+            
                     let muscleGroup = document.createElement('input');
                     let br = document.createElement('br');
                     let lable = document.createElement('lable');
 
                     lable.textContent = exerciseList[i].name
                     muscleGroup.type = 'checkbox';
-                    muscleGroup.id = exerciseList[j].id
-                    console.log(muscleGroup.id)
+                    muscleGroup.id = exerciseList[i].id
+                   
                     
                     div.appendChild(muscleGroup);
                     div.appendChild(lable);
                     div.appendChild(br);
-                }
+                
             }
  
-        }
+        
     }
+        
 
 }
 submit.addEventListener('click', createList);
