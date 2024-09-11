@@ -94,7 +94,8 @@ const createList = (event) => {
 
                     lable.textContent = exerciseList[i].name
                     muscleGroup.type = 'checkbox';
-                    muscleGroup.id = exerciseList[i].id
+                    muscleGroup.id = exerciseList[i] + idList[i];
+                    checkedList.push(muscleGroup.id);
                    
                     
                     div.appendChild(muscleGroup);
