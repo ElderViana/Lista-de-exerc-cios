@@ -82,7 +82,8 @@ const createList = (event) => {
     event.preventDefault();
     console.log(muscleGroup.value)
     let checkedList = [];
-    let idList = ['1', '2', '3', '4', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
+    let idList = [];
+    let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
     console.log(checkedList);
 
     
@@ -95,22 +96,36 @@ const createList = (event) => {
 
                     lable.textContent = exerciseList[i].name
                     muscleGroup.type = 'checkbox';
-                    muscleGroup.id = exerciseList[i].group + idList[i];
-                    checkedList.push(muscleGroup.id);
+                    muscleGroup.id = exerciseList[i].group + CreateIdList[i];
+                    idList.push(muscleGroup.id);
                    
                     
                     div.appendChild(muscleGroup);
                     div.appendChild(lable);
                     div.appendChild(br);
-                
-            }
+        }
  
         
     }
-        
+    const addList = (event) => {
+        event.preventDefault();
+        console.log('u')
+        submit.removeEventListener('click', addList);
+        submit.addEventListener('click', createList);
+    }
+
+    submit.removeEventListener('click', createList);
+    submit.addEventListener('click', addList);
 
 }
-submit.addEventListener('click', createList);
+
+const init = () => {
+    submit.addEventListener('click', createList);
+  }
+  
+  
+  
+  init(); 
 
 
 
