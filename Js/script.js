@@ -112,6 +112,12 @@ const createList = (event) => {
     }
     const addList = (event) => {
         event.preventDefault();
+
+        for(i = 0; i < idList.length; i++){
+            if(idList[i] == true){
+                
+            }
+        }
       
         submit.removeEventListener('click', addList);
         submit.addEventListener('click', createList);
