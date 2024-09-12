@@ -85,9 +85,11 @@ const createList = (event) => {
     
     console.log(muscleGroup.value)
     let checkedList = [];
+    let exerciseList2 = [];
     let idList = [];
-    //let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
+    let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
     console.log(idList);
+    console.log(checkedList);
 
     
     for (i = 0; i < exerciseList.length; i++){
@@ -99,8 +101,10 @@ const createList = (event) => {
 
                     lable.textContent = exerciseList[i].name
                     muscleGroup.type = 'checkbox';
-                    //muscleGroup.id = exerciseList[i].group + CreateIdList[i];
+                    muscleGroup.vale = exerciseList[i].name
+                    muscleGroup.id = exerciseList[i].group + CreateIdList[i];
                     idList.push(muscleGroup);
+                    checkedList.push(muscleGroup);
                    
                     
                     div.appendChild(muscleGroup);
@@ -115,7 +119,7 @@ const createList = (event) => {
 
         for(i = 0; i < idList.length; i++){
             if(idList[i] == true){
-                
+
             }
         }
       
