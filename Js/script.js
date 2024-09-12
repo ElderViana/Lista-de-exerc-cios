@@ -119,9 +119,12 @@ const createList = (event) => {
         event.preventDefault();
 
         for(i = 0; i < idList.length; i++){
-            if(idList[i] == true){
-                if(idList[i] == checkedList[i] && exerciseList[i].group == select.value){
+            if(idList[i].checked == true){
+                if(idList[i].id == checkedList[i].id){
+                    if(exerciseList[i].group == select.value){
                     exerciseList2.push(exerciseList[i]);
+                    console.log('t')
+                    }
 
                 }
 
@@ -130,7 +133,7 @@ const createList = (event) => {
       
         submit.removeEventListener('click', addList);
         submit.addEventListener('click', createList);
-        console.log(idList[0].checked == true)
+       
     }
 
     submit.removeEventListener('click', createList);
