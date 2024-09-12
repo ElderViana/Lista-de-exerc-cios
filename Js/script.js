@@ -90,6 +90,7 @@ const createList = (event) => {
     let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
     console.log(idList);
     console.log(checkedList);
+    console.log(exerciseList2);
 
     
     for (i = 0; i < exerciseList.length; i++){
@@ -119,6 +120,10 @@ const createList = (event) => {
 
         for(i = 0; i < idList.length; i++){
             if(idList[i] == true){
+                if(idList[i] == checkedList[i] && exerciseList[i].group == select.value){
+                    exerciseList2.push(exerciseList[i]);
+
+                }
 
             }
         }
