@@ -72,7 +72,7 @@ const exerciseList = [
 
 const div = document.getElementById('list');
 const submit = document.getElementById('submit');
-const t = document.getElementById('t');
+
 
 
 const select = document.getElementById('muscleGroup');
@@ -82,11 +82,11 @@ const select = document.getElementById('muscleGroup');
 
 const createList = (event) => {
     event.preventDefault();
-    console.log(t.checked == true)
+    
     console.log(muscleGroup.value)
     let checkedList = [];
     let idList = [];
-    let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
+    //let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
     console.log(idList);
 
     
@@ -99,7 +99,7 @@ const createList = (event) => {
 
                     lable.textContent = exerciseList[i].name
                     muscleGroup.type = 'checkbox';
-                    muscleGroup.id = exerciseList[i].group + CreateIdList[i];
+                    //muscleGroup.id = exerciseList[i].group + CreateIdList[i];
                     idList.push(muscleGroup);
                    
                     
@@ -112,8 +112,7 @@ const createList = (event) => {
     }
     const addList = (event) => {
         event.preventDefault();
-        console.log(idList[0].checked == true)
-        console.log(idList)
+      
         submit.removeEventListener('click', addList);
         submit.addEventListener('click', createList);
         console.log(idList[0].checked == true)
