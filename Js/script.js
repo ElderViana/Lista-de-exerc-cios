@@ -64,7 +64,9 @@ const exerciseList = [
     {group: 'Costas', name: 'Remada no Smith', series: '3 ou 4', repetitions: '8 a 15'},
     {group: 'Costas', name: 'Puxada pela frente com o triângulo no pulley', series: '3 ou 4', repetitions: '8 a 15'},
     {group: 'Costas', name: 'Remada na máquina de cabos', series: '3 ou 4', repetitions: '8 a 15'},
-    {group: 'Costas', name: 'Remada na máquina de cabos', series: '3 ou 4', repetitions: '8 a 15'}
+    {group: 'Costas', name: 'Remada na máquina de cabos', series: '3 ou 4', repetitions: '8 a 15'},
+    {group: 'Bíceps', name: 'Rosca bíceps direta com barra', series: '3 ou 4', repetitions: '8 a 15'},
+    {group: 'Bíceps', name: 'Rosca bíceps direta com barra', series: '3 ou 4', repetitions: '8 a 15'},
 
 ];
 
@@ -84,13 +86,15 @@ const createList = (event) => {
     event.preventDefault();
     
     console.log(muscleGroup.value)
-    let checkedList = [];
+    let checkedIdList = [];
     let exerciseList2 = [];
+    let lableList = [];
     let idList = [];
     let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
     console.log(idList);
-    console.log(checkedList);
+    console.log(checkedIdList);
     console.log(exerciseList2);
+  
 
     
     for (i = 0; i < exerciseList.length; i++){
@@ -105,7 +109,8 @@ const createList = (event) => {
                     muscleGroup.vale = exerciseList[i].name
                     muscleGroup.id = exerciseList[i].group + CreateIdList[i];
                     idList.push(muscleGroup);
-                    checkedList.push(muscleGroup);
+                    checkedIdList.push(muscleGroup);
+                    lableList.push(lable.textContent);
                    
                     
                     div.appendChild(muscleGroup);
@@ -118,9 +123,9 @@ const createList = (event) => {
     const addList = (event) => {
         event.preventDefault();
 
-        for(i = 0; i < idList.length; i++){
+        for(i = 0; i < exerciseList2.length; i++){
             if(idList[i].checked == true){
-                if(idList[i].id == checkedList[i].id){
+                if(idList[i].id == checkedIdList[i].id){
                     if(exerciseList[i].group == select.value){
                     exerciseList2.push(exerciseList[i]);
                     console.log('t')
