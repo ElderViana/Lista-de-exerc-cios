@@ -110,7 +110,7 @@ const createList = (event) => {
                     muscleGroup.id = exerciseList[i].group + CreateIdList[i];
                     idList.push(muscleGroup);
                     checkedIdList.push(muscleGroup);
-                    exerciseList2.push(exerciseList);
+                    exerciseList2.push(exerciseList[i]);
                    
                     
                     div.appendChild(muscleGroup);
@@ -125,7 +125,9 @@ const createList = (event) => {
 
         for(i = 0; i < exerciseList2.length; i++){
             if(idList[i].checked == true){
+                
                 if(idList[i].id == checkedIdList[i].id){
+                   
                     if(exerciseList2[i].group == select.value){
                     chosenList.push(exerciseList[i]);
                     console.log('t')
