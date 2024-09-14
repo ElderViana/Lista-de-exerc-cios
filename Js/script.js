@@ -28,8 +28,13 @@ const exerciseList = [
     {group: 'Ombro', name: 'Desenvolvimento na máquina', series: '3 ou 4', repetitions: '8 a 15'},
     {group: 'Ombro', name: 'Elevação lateral no cross', series: '3 ou 4', repetitions: '8 a 15'},
     {group: 'Ombro', name: 'Desenvolvimento frontal com barra', series: '3 ou 4', repetitions: '8 a 15'},
-    {group: 'Trapézio', name: 'Encolhimento de ombro com barra', series: '3 ou 4', repetitions: '8 a 15'},
+    {group: 'Trapézio', name: 'Encolhimento de ombros com barra frontal', series: '3 ou 4', repetitions: '8 a 15'},
     {group: 'Trapézio', name: 'Encolhimento de ombro com halteres', series: '3 ou 4', repetitions: '8 a 15'},
+    {group: 'Trapézio', name: 'Encolhimento de ombros com barra por trás', series: '3 ou 4', repetitions: '8 a 15'},
+    {group: 'Trapézio', name: 'Remada alta com anilha', series: '3 ou 4', repetitions: '8 a 15'},
+    {group: 'Trapézio', name: 'Remada alta com a barra W', series: '3 ou 4', repetitions: '8 a 15'},
+    {group: 'Trapézio', name: 'Crucifixo invertido', series: '3 ou 4', repetitions: '8 a 15'},
+    {group: 'Trapézio', name: 'Arnold press', series: '3 ou 4', repetitions: '8 a 15'},
     {group: 'Perna', name: 'Leg press', series: '3 ou 4', repetitions: '8 a 15'},
     {group: 'Perna', name: 'Agachamento barra solta', series: '3 ou 4', repetitions: '8 a 15'},
     {group: 'Perna', name: 'Agachamento sumô', series: '3 ou 4', repetitions: '8 a 15'},
@@ -66,7 +71,15 @@ const exerciseList = [
     {group: 'Costas', name: 'Remada na máquina de cabos', series: '3 ou 4', repetitions: '8 a 15'},
     {group: 'Costas', name: 'Remada na máquina de cabos', series: '3 ou 4', repetitions: '8 a 15'},
     {group: 'Bíceps', name: 'Rosca bíceps direta com barra', series: '3 ou 4', repetitions: '8 a 15'},
-    {group: 'Bíceps', name: 'Rosca bíceps direta com barra', series: '3 ou 4', repetitions: '8 a 15'},
+    {group: 'Bíceps', name: 'Rosca bíceps direta com halteres', series: '3 ou 4', repetitions: '8 a 15'},
+    {group: 'Bíceps', name: 'Rosca concentrada', series: '3 ou 4', repetitions: '8 a 15'},
+    {group: 'Bíceps', name: 'Rosca Scott', series: '3 ou 4', repetitions: '8 a 15'},
+    {group: 'Bíceps', name: 'Rosca com halteres no banco inclinado', series: '3 ou 4', repetitions: '8 a 15'},
+    {group: 'Bíceps', name: 'Rosca martelo no banco inclinado', series: '3 ou 4', repetitions: '8 a 15'},
+    {group: 'Bíceps', name: 'Rosca com barra W', series: '3 ou 4', repetitions: '8 a 15'},
+    {group: 'Bíceps', name: 'Rosca marterlo', series: '3 ou 4', repetitions: '8 a 15'},
+    {group: 'Bíceps', name: 'Rosca marterlo alternado', series: '3 ou 4', repetitions: '8 a 15'},
+    {group: 'Bíceps', name: 'Rosca bíceps apoiado no banco Scott e com a barra EZ', series: '3 ou 4', repetitions: '8 a 15'}
 
 ];
 
@@ -84,38 +97,42 @@ const select = document.getElementById('muscleGroup');
 
 const createList = (event) => {
     event.preventDefault();
-    
-    console.log(muscleGroup.value)
+
     let checkedIdList = [];
     let chosenList = [];
     let exerciseList2 = [];
     let idList = [];
-    let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
+    let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9'];
     console.log(idList);
     console.log(checkedIdList);
     console.log(chosenList);
+    
   
 
     
     for (i = 0; i < exerciseList.length; i++){
+        if(CreateIdList[i] < '9'){
+            CreateIdList.push(CreateIdList[i] + CreateIdList.length);
+        }
+        
         if(exerciseList[i].group == select.value){
             
-                    let muscleGroup = document.createElement('input');
-                    let br = document.createElement('br');
-                    let lable = document.createElement('lable');
+            let muscleGroup = document.createElement('input');
+            let br = document.createElement('br');
+            let lable = document.createElement('lable');
 
-                    lable.textContent = exerciseList[i].name
-                    muscleGroup.type = 'checkbox';
-                    muscleGroup.vale = exerciseList[i].name
-                    muscleGroup.id = exerciseList[i].group + CreateIdList[i];
-                    idList.push(muscleGroup);
-                    checkedIdList.push(muscleGroup);
-                    exerciseList2.push(exerciseList[i]);
-                   
-                    
-                    div.appendChild(muscleGroup);
-                    div.appendChild(lable);
-                    div.appendChild(br);
+            lable.textContent = exerciseList[i].name
+            muscleGroup.type = 'checkbox';
+            muscleGroup.vale = exerciseList[i].name
+            muscleGroup.id = exerciseList[i].group + CreateIdList[i];
+            idList.push(muscleGroup);
+            checkedIdList.push(muscleGroup);
+            exerciseList2.push(exerciseList[i]);
+            
+            div.appendChild(muscleGroup);
+            div.appendChild(lable);
+            div.appendChild(br);
+                 
         }
  
         
@@ -129,7 +146,7 @@ const createList = (event) => {
                 if(idList[i].id == checkedIdList[i].id){
                    
                     if(exerciseList2[i].group == select.value){
-                    chosenList.push(exerciseList[i]);
+                    chosenList.push(exerciseList2[i]);
                     console.log('t')
                     }
 
