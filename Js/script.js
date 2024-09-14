@@ -89,8 +89,18 @@ const div = document.getElementById('list');
 const submit = document.getElementById('submit');
 
 
+const selectModel = document.getElementById('model');
+const selectWeekdays = document.getElementById('weekdays');
+const selectMuscleGroup = document.getElementById('muscleGroup');
 
-const select = document.getElementById('muscleGroup');
+const table1 = document.getElementById('exerciseList1');
+const table2 = document.getElementById('exerciseList2');
+const table3 = document.getElementById('exerciseList3');
+const table4 = document.getElementById('exerciseList4');
+const table5 = document.getElementById('exerciseList5');
+const table6 = document.getElementById('exerciseList6');
+
+
 
 
 
@@ -115,7 +125,7 @@ const createList = (event) => {
             CreateIdList.push(CreateIdList[i] + CreateIdList.length);
         }
         
-        if(exerciseList[i].group == select.value){
+        if(exerciseList[i].group == selectMuscleGroup.value){
             
             let muscleGroup = document.createElement('input');
             let br = document.createElement('br');
@@ -145,7 +155,7 @@ const createList = (event) => {
                 
                 if(idList[i].id == checkedIdList[i].id){
                    
-                    if(exerciseList2[i].group == select.value){
+                    if(exerciseList2[i].group == selectMuscleGroup.value){
                     chosenList.push(exerciseList2[i]);
                     console.log('t')
                     }
@@ -169,9 +179,10 @@ const init = () => {
     submit.addEventListener('click', createList);
   }
   
+
   
   
-  init(); 
+init(); 
 
 
 
