@@ -93,6 +93,7 @@ const selectModel = document.getElementById('model');
 const selectWeekdays = document.getElementById('weekdays');
 const selectMuscleGroup = document.getElementById('muscleGroup');
 
+
 const table1 = document.getElementById('exerciseList1');
 const table2 = document.getElementById('exerciseList2');
 const table3 = document.getElementById('exerciseList3');
@@ -116,6 +117,8 @@ const createList = (event) => {
     console.log(idList);
     console.log(checkedIdList);
     console.log(chosenList);
+
+    console.log(selectModel.value, selectWeekdays.value)
     
   
 
@@ -157,7 +160,6 @@ const createList = (event) => {
                    
                     if(exerciseList2[i].group == selectMuscleGroup.value){
                     chosenList.push(exerciseList2[i]);
-                    console.log('t')
                     }
 
                 }
