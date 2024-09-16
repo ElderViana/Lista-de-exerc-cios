@@ -110,8 +110,10 @@ const createList = (event) => {
     event.preventDefault();
 
     let checkedIdList = [];
-    let chosenList = [];
+    let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
+  
     let exerciseList2 = [];
+    let tableList = []
     let idList = [];
     let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9'];
     console.log(idList);
@@ -159,7 +161,7 @@ const createList = (event) => {
                 if(idList[i].id == checkedIdList[i].id){
                    
                     if(exerciseList2[i].group == selectMuscleGroup.value){
-                    chosenList.push(exerciseList2[i]);
+                        chosenList.push(exerciseList2[i]);
                     }
 
                 }
