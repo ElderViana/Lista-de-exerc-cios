@@ -110,7 +110,7 @@ const createList = (event) => {
     event.preventDefault();
 
     let checkedIdList = [];
-    let chosenList = [];
+   // let chosenList = [];
   
     let exerciseList2 = [];
     let tableList = []
@@ -118,7 +118,7 @@ const createList = (event) => {
     let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9'];
     console.log(idList);
     console.log(checkedIdList);
-    console.log(chosenList);
+    //console.log(chosenList);
 
     console.log(selectModel.value, selectWeekdays.value)
     
@@ -161,15 +161,17 @@ const createList = (event) => {
                 if(idList[i].id == checkedIdList[i].id){
                    
                     if(exerciseList2[i].group == selectMuscleGroup.value){
+                        let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
                         chosenList.push(exerciseList2[i]);
-                        localStorage.setItem("chosenList", JSON.stringify(chosenList))
+                        localStorage.setItem('chosenList', JSON.stringify(chosenList));
+                      
                     }
 
                 }
 
             }
         }
-      
+       
         submit.removeEventListener('click', addList);
         submit.addEventListener('click', createList);
        
