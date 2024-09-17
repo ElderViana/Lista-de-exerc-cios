@@ -13,25 +13,24 @@ const createTable = () => {
     const tbody5 = table5.querySelector('tbody');
     const tbody6 = table6.querySelector('tbody');
 
-    let test = [tbody1, tbody2, tbody3, tbody4, tbody5,tbody6];
+    let tableList = [tbody1, tbody2, tbody3, tbody4, tbody5,tbody6];
+    console.log(tableList[0])
 
-    for( u = 0; u < test.length; u++){
+    for( u = 0; u < tableList.length; u++){
     
-    test[u].innerHTML = 
-    `<tr>
-      <th>DATA</th>
-      <th>NOME</th>
-      <th>STATUS</th>
-      <th>EDITAR</th>
-      <th>EXCLUIR</th>  
-    </tr>`;
-
+        tableList[u].innerHTML = 
+        `<tr>
+        <th>DATA</th>
+        <th>NOME</th>
+        <th>STATUS</th>
+        <th>EDITAR</th>
+        <th>EXCLUIR</th>  
+        </tr>`;
+     }
     
-    }
-    
-    const row = tbody1.insertRow();
-    row.innerHTML = taskContent;
-    const row2 = tbody2.insertRow();
+    //const row = tbody1.insertRow();
+   // row.innerHTML = taskContent;
+   // const row2 = tbody2.insertRow();
 
 
 
