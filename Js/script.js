@@ -30,8 +30,9 @@ const createTable = () => {
 
 
      const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
+     for(t = 0; t < chosenList.length; t++){
 
-     chosenList.forEach((task, index) => {
+     chosenList.forEach((chosenList, index) => {
 
       
         let date = datePtBr.format(newDate)
@@ -41,8 +42,8 @@ const createTable = () => {
     
             `<tr>
               <td>${date}</td>
-              <td>${task.name}</td>
-              <td>${task.statusType}</td>
+              <td>${chosenList[t].name}</td>
+              <td>${chosenList[t].series}</td>
               <td><button class="btnEdit" onclick="editTask(${index})"><i class="fa fa-pencil-square-o fa-3x" aria-hidden="true"></i></button></td>
               <td><button class="btnDelete" onclick="deleteTask(${index})"><i class="fa fa-trash fa-3x" aria-hidden="true"></i></button></td>
             </tr>`;
