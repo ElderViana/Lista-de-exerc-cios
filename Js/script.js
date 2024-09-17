@@ -1,3 +1,69 @@
+const createTable = () => {
+    const table1 = document.getElementById('exerciseList1');
+    const table2 = document.getElementById('exerciseList2');
+    const table3 = document.getElementById('exerciseList3');
+    const table4 = document.getElementById('exerciseList4');
+    const table5 = document.getElementById('exerciseList5');
+    const table6 = document.getElementById('exerciseList6');
+
+    const tbody1 = table1.querySelector('tbody');
+    const tbody2 = table2.querySelector('tbody');
+    const tbody3 = table3.querySelector('tbody');
+    const tbody4 = table4.querySelector('tbody');
+    const tbody5 = table5.querySelector('tbody');
+    const tbody6 = table6.querySelector('tbody');
+
+    let test = [tbody1, tbody2, tbody3, tbody4, tbody5,tbody6];
+
+    for( u = 0; u < test.length; u++){
+    
+    test[u].innerHTML = 
+    `<tr>
+      <th>DATA</th>
+      <th>NOME</th>
+      <th>STATUS</th>
+      <th>EDITAR</th>
+      <th>EXCLUIR</th>  
+    </tr>`;
+
+    
+    }
+    
+    const row = tbody1.insertRow();
+    row.innerHTML = taskContent;
+    const row2 = tbody2.insertRow();
+
+
+
+
+
+
+
+
+}
+
+
+
+createTable()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const exerciseList = [
     {group: 'Peito', name: 'Supino reto com barra', series: '3 ou 4', repetitions: '8 a 15', id: 'p'},
@@ -94,12 +160,6 @@ const selectWeekdays = document.getElementById('weekdays');
 const selectMuscleGroup = document.getElementById('muscleGroup');
 
 
-const table1 = document.getElementById('exerciseList1');
-const table2 = document.getElementById('exerciseList2');
-const table3 = document.getElementById('exerciseList3');
-const table4 = document.getElementById('exerciseList4');
-const table5 = document.getElementById('exerciseList5');
-const table6 = document.getElementById('exerciseList6');
 
 
 
