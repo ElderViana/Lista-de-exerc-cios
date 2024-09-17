@@ -27,6 +27,10 @@ const createTable = () => {
         <th>EXCLUIR</th>  
         </tr>`;
      }
+
+
+     const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
+
     
     //const row = tbody1.insertRow();
    // row.innerHTML = taskContent;
