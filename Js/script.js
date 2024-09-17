@@ -17,12 +17,12 @@ const createTable = () => {
     console.log(tableList[0])
 
     for( u = 0; u < tableList.length; u++){
-    
+        if(selectMuscleGroup.value == 'Peito')
         tableList[u].innerHTML = 
         `<tr>
-        <th>DATA</th>
-        <th>NOME</th>
-        <th>STATUS</th>  
+        <th>Treino1: Peito + tríceps + antebraço + abdominal</th>
+        <th>Quantidade de séries</th>
+        <th>Quantidade de repetições</th>  
         </tr>`;
      
 
