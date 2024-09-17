@@ -22,38 +22,34 @@ const createTable = () => {
         `<tr>
         <th>DATA</th>
         <th>NOME</th>
-        <th>STATUS</th>
-        <th>EDITAR</th>
-        <th>EXCLUIR</th>  
+        <th>STATUS</th>  
         </tr>`;
-     }
+     
 
 
      const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
-     for(t = 0; t < chosenList.length; t++){
 
      chosenList.forEach((chosenList, index) => {
 
-      
-        let date = datePtBr.format(newDate)
+      console.log(chosenList)
+     
         
       
         const taskContent = 
     
             `<tr>
-              <td>${date}</td>
-              <td>${chosenList[t].name}</td>
-              <td>${chosenList[t].series}</td>
-              <td><button class="btnEdit" onclick="editTask(${index})"><i class="fa fa-pencil-square-o fa-3x" aria-hidden="true"></i></button></td>
-              <td><button class="btnDelete" onclick="deleteTask(${index})"><i class="fa fa-trash fa-3x" aria-hidden="true"></i></button></td>
+              <td>${chosenList.name}</td>
+              <td>${chosenList.series}</td>
+              <td>${chosenList.repetitions}</td>
             </tr>`;
     
-        const row = tbody.insertRow();
+        const row = tableList[u].insertRow();
         row.innerHTML = taskContent;
     
       });
+    }
 
-    
+     
     //const row = tbody1.insertRow();
    // row.innerHTML = taskContent;
    // const row2 = tbody2.insertRow();
@@ -69,7 +65,7 @@ const createTable = () => {
 
 
 
-createTable()
+
 
 
 
@@ -194,6 +190,7 @@ const selectMuscleGroup = document.getElementById('muscleGroup');
 const createList = (event) => {
     event.preventDefault();
 
+
     let checkedIdList = [];
    // let chosenList = [];
   
@@ -249,6 +246,7 @@ const createList = (event) => {
                         let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
                         chosenList.push(exerciseList2[i]);
                         localStorage.setItem('chosenList', JSON.stringify(chosenList));
+                        createTable()
                       
                     }
 
