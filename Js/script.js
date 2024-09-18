@@ -136,20 +136,23 @@ const createTable = () => {
     let tableList = [tbody1, tbody2, tbody3, tbody4, tbody5,tbody6];
     console.log(tableList[0])
 
-    for( u = 0; u < tableList.length; u++){
+    //for( u = 0; u < tableList.length; u++){
         
-        tableList[u].innerHTML = 
-        `<tr>
-        <th>Treino1: ${selectMuscleGroup.value} + tríceps + antebraço + abdominal</th>
-        <th>Quantidade de séries</th>
-        <th>Quantidade de repetições</th>  
-        </tr>`;
+      
      
 
 
      const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
+     tbody1.innerHTML = 
+     `<tr>
+     <th>Treino1: ${selectMuscleGroup.value} + tríceps + antebraço + abdominal</th>
+     <th>Quantidade de séries</th>
+     <th>Quantidade de repetições</th>  
+     </tr>`;
 
      chosenList.forEach((chosenList, index) => {
+
+      
 
       console.log(chosenList)
      
@@ -163,7 +166,7 @@ const createTable = () => {
               <td>${chosenList.repetitions}</td>
             </tr>`;
     
-        const row = tableList[u].insertRow();
+        const row = tbody1.insertRow();
         row.innerHTML = taskContent;
     
       });
@@ -173,15 +176,7 @@ const createTable = () => {
     //const row = tbody1.insertRow();
    // row.innerHTML = taskContent;
    // const row2 = tbody2.insertRow();
-
-
-
-
-
-
-
-
-}
+//}
 
 
 
