@@ -137,7 +137,7 @@ const createTable = () => {
     console.log(tableList[0])
 
     for( u = 0; u < tableList.length; u++){
-        if(selectMuscleGroup.value == 'Peito')
+        
         tableList[u].innerHTML = 
         `<tr>
         <th>Treino1: ${selectMuscleGroup.value} + tríceps + antebraço + abdominal</th>
