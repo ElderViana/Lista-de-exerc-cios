@@ -1,67 +1,4 @@
-const createTable = () => {
-    const table1 = document.getElementById('exerciseList1');
-    const table2 = document.getElementById('exerciseList2');
-    const table3 = document.getElementById('exerciseList3');
-    const table4 = document.getElementById('exerciseList4');
-    const table5 = document.getElementById('exerciseList5');
-    const table6 = document.getElementById('exerciseList6');
 
-    const tbody1 = table1.querySelector('tbody');
-    const tbody2 = table2.querySelector('tbody');
-    const tbody3 = table3.querySelector('tbody');
-    const tbody4 = table4.querySelector('tbody');
-    const tbody5 = table5.querySelector('tbody');
-    const tbody6 = table6.querySelector('tbody');
-
-    let tableList = [tbody1, tbody2, tbody3, tbody4, tbody5,tbody6];
-    console.log(tableList[0])
-
-    for( u = 0; u < tableList.length; u++){
-        if(selectMuscleGroup.value == 'Peito')
-        tableList[u].innerHTML = 
-        `<tr>
-        <th>Treino1: Peito + tríceps + antebraço + abdominal</th>
-        <th>Quantidade de séries</th>
-        <th>Quantidade de repetições</th>  
-        </tr>`;
-     
-
-
-     const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
-
-     chosenList.forEach((chosenList, index) => {
-
-      console.log(chosenList)
-     
-        
-      
-        const taskContent = 
-    
-            `<tr>
-              <td>${chosenList.name}</td>
-              <td>${chosenList.series}</td>
-              <td>${chosenList.repetitions}</td>
-            </tr>`;
-    
-        const row = tableList[u].insertRow();
-        row.innerHTML = taskContent;
-    
-      });
-    }
-
-     
-    //const row = tbody1.insertRow();
-   // row.innerHTML = taskContent;
-   // const row2 = tbody2.insertRow();
-
-
-
-
-
-
-
-
-}
 
 
 
@@ -179,6 +116,103 @@ const submit = document.getElementById('submit');
 const selectModel = document.getElementById('model');
 const selectWeekdays = document.getElementById('weekdays');
 const selectMuscleGroup = document.getElementById('muscleGroup');
+
+
+const createTable = () => {
+    const table1 = document.getElementById('exerciseList1');
+    const table2 = document.getElementById('exerciseList2');
+    const table3 = document.getElementById('exerciseList3');
+    const table4 = document.getElementById('exerciseList4');
+    const table5 = document.getElementById('exerciseList5');
+    const table6 = document.getElementById('exerciseList6');
+
+    const tbody1 = table1.querySelector('tbody');
+    const tbody2 = table2.querySelector('tbody');
+    const tbody3 = table3.querySelector('tbody');
+    const tbody4 = table4.querySelector('tbody');
+    const tbody5 = table5.querySelector('tbody');
+    const tbody6 = table6.querySelector('tbody');
+
+    let tableList = [tbody1, tbody2, tbody3, tbody4, tbody5,tbody6];
+    console.log(tableList[0])
+
+    for( u = 0; u < tableList.length; u++){
+        if(selectMuscleGroup.value == 'Peito')
+        tableList[u].innerHTML = 
+        `<tr>
+        <th>Treino1: ${selectMuscleGroup.value} + tríceps + antebraço + abdominal</th>
+        <th>Quantidade de séries</th>
+        <th>Quantidade de repetições</th>  
+        </tr>`;
+     
+
+
+     const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
+
+     chosenList.forEach((chosenList, index) => {
+
+      console.log(chosenList)
+     
+        
+      
+        const taskContent = 
+    
+            `<tr>
+              <td>${chosenList.name}</td>
+              <td>${chosenList.series}</td>
+              <td>${chosenList.repetitions}</td>
+            </tr>`;
+    
+        const row = tableList[u].insertRow();
+        row.innerHTML = taskContent;
+    
+      });
+    }
+
+     
+    //const row = tbody1.insertRow();
+   // row.innerHTML = taskContent;
+   // const row2 = tbody2.insertRow();
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
