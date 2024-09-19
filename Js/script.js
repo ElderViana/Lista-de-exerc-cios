@@ -138,12 +138,51 @@ const createTable = () => {
     console.log(groupList)
     groupList.push(selectMuscleGroup.value);
     for( u = 0; u < tableList.length; u++){
+
+        const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
+
         if(selectWeekdays.value == '5 dias'){
             if(selectModel.value == 'ABC'){
+                tableList[u].innerHTML = 
+                `<tr>
+                <th>Treino1: ${selectMuscleGroup.value} + tríceps + antebraço + abdominal</th>
+                <th>Quantidade de séries</th>
+                <th>Quantidade de repetições</th>  
+                </tr>`;
+        
+                chosenList.forEach((chosenList, index) => {
+                const taskContent = 
+                `<tr>
+                    <td>${chosenList.name}</td>
+                    <td>${chosenList.series}</td>
+                    <td>${chosenList.repetitions}</td>
+                </tr>`;
+                const row = tableList[u].insertRow();
+                row.innerHTML = taskContent;
+            
+              });
             
             }
     
             if(selectModel.value == 'ABCDE'){
+                tableList[u].innerHTML = 
+                `<tr>
+                <th>Treino1: ${selectMuscleGroup.value} + tríceps + antebraço + abdominal</th>
+                <th>Quantidade de séries</th>
+                <th>Quantidade de repetições</th>  
+                </tr>`;
+        
+                chosenList.forEach((chosenList, index) => {
+                const taskContent = 
+                `<tr>
+                    <td>${chosenList.name}</td>
+                    <td>${chosenList.series}</td>
+                    <td>${chosenList.repetitions}</td>
+                </tr>`;
+                const row = tableList[u].insertRow();
+                row.innerHTML = taskContent;
+            
+              });
               
             }
 
@@ -152,10 +191,46 @@ const createTable = () => {
         }
         if(selectWeekdays.value == '6 dias'){
             if(selectModel.value == 'ABC'){
+                tableList[u].innerHTML = 
+                `<tr>
+                <th>Treino1: ${selectMuscleGroup.value} + tríceps + antebraço + abdominal</th>
+                <th>Quantidade de séries</th>
+                <th>Quantidade de repetições</th>  
+                </tr>`;
+        
+                chosenList.forEach((chosenList, index) => {
+                const taskContent = 
+                `<tr>
+                    <td>${chosenList.name}</td>
+                    <td>${chosenList.series}</td>
+                    <td>${chosenList.repetitions}</td>
+                </tr>`;
+                const row = tableList[u].insertRow();
+                row.innerHTML = taskContent;
+            
+              });
             
             }
     
             if(selectModel.value == 'ABCDE'){
+                tableList[u].innerHTML = 
+                `<tr>
+                <th>Treino1: ${selectMuscleGroup.value} + tríceps + antebraço + abdominal</th>
+                <th>Quantidade de séries</th>
+                <th>Quantidade de repetições</th>  
+                </tr>`;
+        
+                chosenList.forEach((chosenList, index) => {
+                const taskContent = 
+                `<tr>
+                    <td>${chosenList.name}</td>
+                    <td>${chosenList.series}</td>
+                    <td>${chosenList.repetitions}</td>
+                </tr>`;
+                const row = tableList[u].insertRow();
+                row.innerHTML = taskContent;
+            
+              });
               
             }
 
@@ -163,25 +238,8 @@ const createTable = () => {
         }
 
      
-        const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
-        tableList[u].innerHTML = 
-        `<tr>
-        <th>Treino1: ${selectMuscleGroup.value} + tríceps + antebraço + abdominal</th>
-        <th>Quantidade de séries</th>
-        <th>Quantidade de repetições</th>  
-        </tr>`;
-
-        chosenList.forEach((chosenList, index) => {
-        const taskContent = 
-        `<tr>
-            <td>${chosenList.name}</td>
-            <td>${chosenList.series}</td>
-            <td>${chosenList.repetitions}</td>
-        </tr>`;
-        const row = tableList[u].insertRow();
-        row.innerHTML = taskContent;
-    
-      });
+       
+      
     }
 
      
