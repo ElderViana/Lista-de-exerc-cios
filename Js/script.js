@@ -349,12 +349,10 @@ const createList = (event) => {
                         chosenList.push(exerciseList2[i]);
                         localStorage.setItem('chosenList', JSON.stringify(chosenList));
                         createTable()
-                        submit2.addEventListener('click', cleanList);
-
-                        const cleanList = () => {
-                            idList = [];
-                        }
+                          
+    
                        
+
                       
                     }
 
@@ -362,17 +360,18 @@ const createList = (event) => {
 
             }
         }
-       
+     
        
         submit.removeEventListener('click', addList);
         submit.addEventListener('click', createList);
+       
         console.log(idList)
        
     }
 
     submit.removeEventListener('click', createList);
     submit.addEventListener('click', addList);
-   
+
 
 }
 
@@ -381,8 +380,18 @@ const init = () => {
   }
   
 
- 
-  
+  const cleanList = (event) => {
+    event.preventDefault();
+
+
+
+
+
+
+    exerciseList = [];
+}
+
+submit2.addEventListener('click', cleanList);
 init(); 
 init(); 
 
