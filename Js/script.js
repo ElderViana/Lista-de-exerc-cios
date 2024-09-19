@@ -138,23 +138,31 @@ const createTable = () => {
     console.log(groupList)
     groupList.push(selectMuscleGroup.value);
     for( u = 0; u < tableList.length; u++){
-        if( selectWeekdays.value == '5'){
+        if(selectWeekdays.value == '5 dias'){
+            if(selectModel.value == 'ABC'){
+            
+            }
+    
+            if(selectModel.value == 'ABCDE'){
+              
+            }
 
-            console.log('oi')
+         
 
         }
-        if( selectWeekdays.value == '6'){
+        if(selectWeekdays.value == '6 dias'){
+            if(selectModel.value == 'ABC'){
+            
+            }
+    
+            if(selectModel.value == 'ABCDE'){
+              
+            }
 
-            console.log('hello')
-        }
-
-        if(selectModel.value == 'ABC'){
             
         }
 
-        if(selectModel.value == 'ABCDE'){
-          
-        }
+     
         const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
         tableList[u].innerHTML = 
         `<tr>
