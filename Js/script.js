@@ -111,6 +111,7 @@ const exerciseList = [
 
 const div = document.getElementById('list');
 const submit = document.getElementById('submit');
+const submit2 = document.getElementById('submit2');
 
 
 const selectModel = document.getElementById('model');
@@ -143,6 +144,8 @@ const createTable = () => {
 
         if(selectWeekdays.value == '5 dias'){
             if(selectModel.value == 'ABC'){
+const selectMuscleGroup = document.getElementById('muscleGroup');
+                //if(selectMuscleGroup.value == 'peito' |)
                 tableList[u].innerHTML = 
                 `<tr>
                 <th>Treino1: ${selectMuscleGroup.value} + tríceps + antebraço + abdominal</th>
@@ -346,6 +349,12 @@ const createList = (event) => {
                         chosenList.push(exerciseList2[i]);
                         localStorage.setItem('chosenList', JSON.stringify(chosenList));
                         createTable()
+                        submit2.addEventListener('click', cleanList);
+
+                        const cleanList = () => {
+                            idList = [];
+                        }
+                       
                       
                     }
 
@@ -354,13 +363,16 @@ const createList = (event) => {
             }
         }
        
+       
         submit.removeEventListener('click', addList);
         submit.addEventListener('click', createList);
+        console.log(idList)
        
     }
 
     submit.removeEventListener('click', createList);
     submit.addEventListener('click', addList);
+   
 
 }
 
@@ -369,7 +381,7 @@ const init = () => {
   }
   
 
-  
+ 
   
 init(); 
 init(); 
