@@ -139,34 +139,28 @@ const createTable = () => {
     groupList.push(selectMuscleGroup.value);
     for( u = 0; u < tableList.length; u++){
         
-      
-   
+        if(selectModel.value == 'ABC'){
+            console.log('oi')
+        }
 
+        if(selectModel.value == 'ABCDE'){
+            console.log('hello')
+        }
+        const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
+        tableList[u].innerHTML = 
+        `<tr>
+        <th>Treino1: ${selectMuscleGroup.value} + tríceps + antebraço + abdominal</th>
+        <th>Quantidade de séries</th>
+        <th>Quantidade de repetições</th>  
+        </tr>`;
 
-     const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
-     tableList[u].innerHTML = 
-     `<tr>
-     <th>Treino1: ${selectMuscleGroup.value} + tríceps + antebraço + abdominal</th>
-     <th>Quantidade de séries</th>
-     <th>Quantidade de repetições</th>  
-     </tr>`;
-
-     chosenList.forEach((chosenList, index) => {
-
-      
-
-      console.log(chosenList)
-     
-        
-      
+        chosenList.forEach((chosenList, index) => {
         const taskContent = 
-    
-            `<tr>
-              <td>${chosenList.name}</td>
-              <td>${chosenList.series}</td>
-              <td>${chosenList.repetitions}</td>
-            </tr>`;
-    
+        `<tr>
+            <td>${chosenList.name}</td>
+            <td>${chosenList.series}</td>
+            <td>${chosenList.repetitions}</td>
+        </tr>`;
         const row = tableList[u].insertRow();
         row.innerHTML = taskContent;
     
@@ -225,7 +219,7 @@ const createList = (event) => {
    // let chosenList = [];
   
     let exerciseList2 = [];
-    let tableList = []
+ 
     let idList = [];
     let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9'];
     console.log(idList);
