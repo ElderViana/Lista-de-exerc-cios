@@ -291,10 +291,25 @@ const selectMuscleGroup = document.getElementById('muscleGroup');
 
 const createList = (event) => {
     event.preventDefault();
- document.getElementById('model').value = 'ABC'
+
+
+
+
+
+   // let model = JSON.parse(localStorage.getItem('model')) || [];
+    let model = selectModel.value
+    //model.push(selectModel.value);
+    localStorage.setItem('model', JSON.stringify(model));
+console.log(model)
+
+
+
+
+
+ //document.getElementById('model').value = 'ABC'
 
     let checkedIdList = [];
-   // let chosenList = [];
+
   
     let exerciseList2 = [];
  
@@ -302,9 +317,9 @@ const createList = (event) => {
     let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9'];
     console.log(idList);
     console.log(checkedIdList);
-    //console.log(chosenList);
+  
 
-    console.log(selectModel.value, selectWeekdays.value)
+   
     
   
 
