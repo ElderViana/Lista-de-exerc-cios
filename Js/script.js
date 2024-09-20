@@ -115,7 +115,7 @@ const submit2 = document.getElementById('submit2');
 
 
 const selectModel = document.getElementById('model');
-const selectWeekdays = document.getElementById('weekdays');
+const selectWeekDays = document.getElementById('weekdays');
 const selectMuscleGroup = document.getElementById('muscleGroup');
 
 
@@ -142,7 +142,7 @@ const createTable = () => {
 
         const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
 
-        if(selectWeekdays.value == '5 dias'){
+        if(selectWeekDays.value == '5 dias'){
             if(selectModel.value == 'ABC'){
 const selectMuscleGroup = document.getElementById('muscleGroup');
                 //if(selectMuscleGroup.value == 'peito' |)
@@ -192,7 +192,7 @@ const selectMuscleGroup = document.getElementById('muscleGroup');
          
 
         }
-        if(selectWeekdays.value == '6 dias'){
+        if(selectWeekDays.value == '6 dias'){
             if(selectModel.value == 'ABC'){
                 tableList[u].innerHTML = 
                 `<tr>
@@ -298,9 +298,11 @@ const createList = (event) => {
 
    // let model = JSON.parse(localStorage.getItem('model')) || [];
     let model = selectModel.value
+    let weekDays = selectWeekDays.value
     //model.push(selectModel.value);
     localStorage.setItem('model', JSON.stringify(model));
-console.log(model)
+    localStorage.setItem('weekDays', JSON.stringify(weekDays));
+console.log(model, weekDays)
 
 
 
