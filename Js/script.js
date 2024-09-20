@@ -294,16 +294,18 @@ const createList = (event) => {
 
 
 
-//if()
+ 
 
-    let model = JSON.parse(localStorage.getItem('model'));
+    //let model = JSON.parse(localStorage.getItem('model'));
     let weekDays = JSON.parse(localStorage.getItem('weekDays'));
-     model = selectModel.value
+    let model = selectModel.value
      weekDays = selectWeekDays.value
     //model.push(selectModel.value);
     localStorage.setItem('model', JSON.stringify(model));
     localStorage.setItem('weekDays', JSON.stringify(weekDays));
 console.log(model, weekDays)
+
+
 
 
 
@@ -394,7 +396,9 @@ console.log(model, weekDays)
 }
 
 const init = () => {
-    submit.addEventListener('click', createList);
+    submit.addEventListener('click', createList); 
+    document.getElementById('model').value = model
+
 
   }
   
@@ -421,5 +425,7 @@ init();
 
 
 
-
+if(model == 'ABC' ){
+   
+}
 
