@@ -291,7 +291,7 @@ const selectMuscleGroup = document.getElementById('muscleGroup');
 
 const createList = (event) => {
     event.preventDefault();
-
+ document.getElementById('model').value = 'ABC'
 
     let checkedIdList = [];
    // let chosenList = [];
@@ -349,7 +349,7 @@ const createList = (event) => {
                         chosenList.push(exerciseList2[i]);
                         localStorage.setItem('chosenList', JSON.stringify(chosenList));
                         createTable()
-                          
+                           
     
                        
 
@@ -383,6 +383,15 @@ const init = () => {
 
   const cleanList = (event) => {
    
+
+    const cleanList2 = (event) => {
+      
+   
+
+    }
+  cleanList2()
+
+  
 
 }
 
