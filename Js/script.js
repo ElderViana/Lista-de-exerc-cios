@@ -365,7 +365,7 @@ const createList = (event) => {
         submit.removeEventListener('click', addList);
         submit.addEventListener('click', createList);
        
-        console.log(idList)
+
        
     }
 
@@ -377,18 +377,13 @@ const createList = (event) => {
 
 const init = () => {
     submit.addEventListener('click', createList);
+
   }
   
 
   const cleanList = (event) => {
-    event.preventDefault();
+   
 
-
-
-
-
-
-    exerciseList = [];
 }
 
 submit2.addEventListener('click', cleanList);
