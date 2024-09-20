@@ -294,11 +294,12 @@ const createList = (event) => {
 
 
 
+//if()
 
-
-   // let model = JSON.parse(localStorage.getItem('model')) || [];
-    let model = selectModel.value
-    let weekDays = selectWeekDays.value
+    let model = JSON.parse(localStorage.getItem('model'));
+    let weekDays = JSON.parse(localStorage.getItem('weekDays'));
+     model = selectModel.value
+     weekDays = selectWeekDays.value
     //model.push(selectModel.value);
     localStorage.setItem('model', JSON.stringify(model));
     localStorage.setItem('weekDays', JSON.stringify(weekDays));
