@@ -397,7 +397,7 @@ console.log(model, weekDays)
 
 const init = () => {
     submit.addEventListener('click', createList); 
-    document.getElementById('model').value = model
+    document.getElementById('model').value =  JSON.parse(localStorage.getItem('model'));
 
 
   }
