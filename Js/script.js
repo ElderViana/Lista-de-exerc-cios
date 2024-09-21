@@ -115,7 +115,7 @@ const submit2 = document.getElementById('submit2');
 
 
 const selectModel = document.getElementById('model');
-const selectWeekDays = document.getElementById('weekdays');
+const selectWeekDays = document.getElementById('weekDays');
 const selectMuscleGroup = document.getElementById('muscleGroup');
 
 
@@ -297,13 +297,12 @@ const createList = (event) => {
  
 
     //let model = JSON.parse(localStorage.getItem('model'));
-    let weekDays = JSON.parse(localStorage.getItem('weekDays'));
+    //let weekDays = JSON.parse(localStorage.getItem('weekDays'));
     let model = selectModel.value
-     weekDays = selectWeekDays.value
+    let weekDays = selectWeekDays.value
     //model.push(selectModel.value);
     localStorage.setItem('model', JSON.stringify(model));
     localStorage.setItem('weekDays', JSON.stringify(weekDays));
-console.log(model, weekDays)
 
 
 
@@ -320,8 +319,7 @@ console.log(model, weekDays)
  
     let idList = [];
     let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9'];
-    console.log(idList);
-    console.log(checkedIdList);
+   
   
 
    
@@ -398,10 +396,11 @@ console.log(model, weekDays)
 const init = () => {
     submit.addEventListener('click', createList); 
     document.getElementById('model').value =  JSON.parse(localStorage.getItem('model'));
+    document.getElementById('weekDays').value =  JSON.parse(localStorage.getItem('weekDays'));
 
 
   }
-  
+  console.log(weekDays)
 
   const cleanList = (event) => {
    
