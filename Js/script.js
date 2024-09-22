@@ -320,13 +320,6 @@ const createList = (event) => {
     let idList = [];
     let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9'];
    
-  
-
-   
-    
-  
-
-    
     for (i = 0; i < exerciseList.length; i++){
         if(CreateIdList[i] < '9'){
             CreateIdList.push(CreateIdList[i] + CreateIdList.length);
@@ -392,6 +385,17 @@ const createList = (event) => {
 
 
 }
+
+let model2 = JSON.parse(localStorage.getItem('model'));
+let weekDays2 = JSON.parse(localStorage.getItem('weekDays'));
+console.log(model2, weekDays2);
+
+
+
+
+
+
+
 
 const init = () => {
     submit.addEventListener('click', createList); 
