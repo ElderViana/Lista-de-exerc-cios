@@ -434,7 +434,4 @@ init();
 
 
 
-if(model == 'ABC' ){
-   
-}
 
