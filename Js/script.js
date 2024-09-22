@@ -390,7 +390,14 @@ let model2 = JSON.parse(localStorage.getItem('model'));
 let weekDays2 = JSON.parse(localStorage.getItem('weekDays'));
 console.log(model2, weekDays2);
 
+const select = () => {
 
+    if(model2 != '' || weekDays2 != '') {
+        document.getElementById('model').value =  JSON.parse(localStorage.getItem('model'));
+        document.getElementById('weekDays').value =  JSON.parse(localStorage.getItem('weekDays'));
+    }
+
+}
 
 
 
@@ -399,8 +406,7 @@ console.log(model2, weekDays2);
 
 const init = () => {
     submit.addEventListener('click', createList); 
-    document.getElementById('model').value =  JSON.parse(localStorage.getItem('model'));
-    document.getElementById('weekDays').value =  JSON.parse(localStorage.getItem('weekDays'));
+    select();
 
 
   }
