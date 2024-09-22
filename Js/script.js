@@ -136,7 +136,7 @@ const createTable = () => {
 
     let tableList = [tbody1, tbody2, tbody3, tbody4, tbody5,tbody6];
     let groupList = [];
-    console.log(groupList)
+  
     groupList.push(selectMuscleGroup.value);
     for( u = 0; u < tableList.length; u++){
 
@@ -404,7 +404,7 @@ const init = () => {
 
 
   }
-  console.log(weekDays)
+
 
   const cleanList = (event) => {
    
