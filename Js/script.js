@@ -273,9 +273,9 @@ const select = () => {
                 <th>Quantidade de séries</th>
                 <th>Quantidade de repetições</th>  
                 </tr>`;
-        
+              
                 chosenList.forEach((chosenList, index) => {
-                    if(chosenList.group == selectMuscleGroup.value){
+                    if(chosenList.group == 'Peito' || chosenList.group == 'Tríceps' || chosenList.group == 'Antebraço'){
                 const taskContent = 
                 `<tr>
                     <td>${chosenList.name}</td>
@@ -287,6 +287,7 @@ const select = () => {
                     }
             
               });
+            
             
             }
     /*
