@@ -116,14 +116,23 @@ const createList = (event) => {
     let exerciseList2 = [];
     let idList = [];
     let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9'];
+    let groupList = ['Peito', 'Tríceps', 'Bíceps'];
     let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
-    localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
-    for(q = 0; q < selectGroupList.length; q++){
-        if(selectGroupList[i] != selectMuscleGroup.value){
-            selectGroupList.push(selectMuscleGroup.value);
-        }
-    }
+  
    
+   
+    console.log(selectGroupList)
+    for(q = 0; q < groupList.length; q++){
+        console.log('oi')
+
+        
+        if(groupList[q] == selectMuscleGroup.value){
+            selectGroupList.push(groupList[q]);
+           
+        }
+      
+    }
+    localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
     for (i = 0; i < exerciseList.length; i++){
         if(CreateIdList[i] < '9'){
             CreateIdList.push(CreateIdList[i] + CreateIdList.length);
