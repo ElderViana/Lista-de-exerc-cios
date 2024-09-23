@@ -127,7 +127,7 @@ const createList = (event) => {
 
         
         if(groupList[q] == selectMuscleGroup.value){
-            selectGroupList.push(groupList[q]);
+            selectGroupList.push(selectMuscleGroup.value);
            
         }
       
