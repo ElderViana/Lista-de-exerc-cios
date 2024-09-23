@@ -119,7 +119,9 @@ const createList = (event) => {
     let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
     localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
     for(q = 0; q < selectGroupList.length; q++){
-        
+        if(selectGroupList[i] != selectMuscleGroup.value){
+            selectGroupList.push(selectMuscleGroup.value);
+        }
     }
    
     for (i = 0; i < exerciseList.length; i++){
