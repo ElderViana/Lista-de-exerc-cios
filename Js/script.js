@@ -116,6 +116,11 @@ const createList = (event) => {
     let exerciseList2 = [];
     let idList = [];
     let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9'];
+    let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
+    localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
+    for(q = 0; q < selectGroupList.length; q++){
+        
+    }
    
     for (i = 0; i < exerciseList.length; i++){
         if(CreateIdList[i] < '9'){
