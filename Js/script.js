@@ -192,36 +192,146 @@ const select = () => {
 
 
 
+ const createTable = () => {
+    const table1 = document.getElementById('exerciseList1');
+    const table2 = document.getElementById('exerciseList2');
+    const table3 = document.getElementById('exerciseList3');
+    const table4 = document.getElementById('exerciseList4');
+    const table5 = document.getElementById('exerciseList5');
+    const table6 = document.getElementById('exerciseList6');
+
+    const tbody1 = table1.querySelector('tbody');
+    const tbody2 = table2.querySelector('tbody');
+    const tbody3 = table3.querySelector('tbody');
+    const tbody4 = table4.querySelector('tbody');
+    const tbody5 = table5.querySelector('tbody');
+    const tbody6 = table6.querySelector('tbody');
+
+    let tableList = [tbody1, tbody2, tbody3, tbody4, tbody5,tbody6];
+    let groupList = [];
+  
+    groupList.push(selectMuscleGroup.value);
+    for( u = 0; u < tableList.length; u++){
+
+        const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
+/*
+        if(weekDays2 == '5 dias'){
+            if(model2 == 'ABC'){
+                tableList[u].innerHTML = 
+                `<tr>
+                <th>Treino1: Peito + Tríceps + Antebraço + Abdominal</th>
+                <th>Quantidade de séries</th>
+                <th>Quantidade de repetições</th>  
+                </tr>`;
+              
+                chosenList.forEach((chosenList, index) => {
+                    
+                const taskContent = 
+                `<tr>
+                    <td>${chosenList.name}</td>
+                    <td>${chosenList.series}</td>
+                    <td>${chosenList.repetitions}</td>
+                </tr>`;
+                const row = tableList[u].insertRow();
+                row.innerHTML = taskContent;
+                    
+              });
+            
+            }
+    
+            if(model2 == 'ABCDE'){
+                tableList[u].innerHTML = 
+                `<tr>
+                <th>Treino1: ${selectMuscleGroup.value} + tríceps + antebraço + abdominal</th>
+                <th>Quantidade de séries</th>
+                <th>Quantidade de repetições</th>  
+                </tr>`;
+        
+                chosenList.forEach((chosenList, index) => {
+                const taskContent = 
+                `<tr>
+                    <td>${chosenList.name}</td>
+                    <td>${chosenList.series}</td>
+                    <td>${chosenList.repetitions}</td>
+                </tr>`;
+                const row = tableList[u].insertRow();
+                row.innerHTML = taskContent;
+            
+              });
+              
+            }
+
+         
+
+        }
+*/
+        if(weekDays2== '6 dias'){
+            if(model2 == 'ABC'){
+                tableList[u].innerHTML = 
+                `<tr>
+                <th>Treino1: ${selectMuscleGroup.value} + tríceps + antebraço + abdominal</th>
+                <th>Quantidade de séries</th>
+                <th>Quantidade de repetições</th>  
+                </tr>`;
+              
+                chosenList.forEach((chosenList, index) => {
+                    if(chosenList.group == 'Peito' || chosenList.group == 'Tríceps' || chosenList.group == 'Antebraço'){
+                const taskContent = 
+                `<tr>
+                    <td>${chosenList.name}</td>
+                    <td>${chosenList.series}</td>
+                    <td>${chosenList.repetitions}</td>
+                </tr>`;
+                const row = tableList[u].insertRow();
+                row.innerHTML = taskContent;
+                    }
+            
+              });
+            
+            
+            }
+    /*
+            if(model2 == 'ABCDE'){
+                tableList[u].innerHTML = 
+                `<tr>
+                <th>Treino1: ${selectMuscleGroup.value} + tríceps + antebraço + abdominal</th>
+                <th>Quantidade de séries</th>
+                <th>Quantidade de repetições</th>  
+                </tr>`;
+        
+                chosenList.forEach((chosenList, index) => {
+                const taskContent = 
+                `<tr>
+                    <td>${chosenList.name}</td>
+                    <td>${chosenList.series}</td>
+                    <td>${chosenList.repetitions}</td>
+                </tr>`;
+                const row = tableList[u].insertRow();
+                row.innerHTML = taskContent;
+            
+              });
+              
+            }
+*/
+            
+        }
+
+     
+       
+      
+    }
+}
+
+
+const cleanList = () => {}
 
 
 const init = () => {
+
     submit.addEventListener('click', createList); 
+    submit2.addEventListener('click', cleanList);
     select();
-
-
-  }
-
-
-  const cleanList = (event) => {
-   
-
-    const cleanList2 = (event) => {
-      
-   
-
-    }
-  cleanList2()
-
-  
 
 }
 
-submit2.addEventListener('click', cleanList);
 init(); 
-init(); 
-
-
-
-
-
-
