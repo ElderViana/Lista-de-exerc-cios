@@ -124,17 +124,18 @@ const createList = (event) => {
    
    
     console.log(selectGroupList)
-    for(q = 0; q < groupList.length; q++){
-        console.log('oi')
+    groupList.forEach((group) => {
+        for(q = 0; q < selectGroupList.length; q++){
+            console.log('oi')
 
-        if(groupList[q] != selectGroupList[q]){
-            if(groupList[q] == selectMuscleGroup.value){
-                selectGroupList.push(selectMuscleGroup.value);
-            
+            if(group != selectGroupList[q]){
+                if(selectGroupList[q] != selectMuscleGroup.value){
+                    selectGroupList.push(selectMuscleGroup.value);
+                
+                }
             }
         }
-      
-    }
+    });
     localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
     for (i = 0; i < exerciseList.length; i++){
         if(CreateIdList[i] < '9'){
@@ -218,7 +219,7 @@ const deleteList = (index) => {
   }
   let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
 for(u = 0; u < selectGroupList.length; u++){
-    deleteList(u);
+    
 }
 
 console.log(selectGroupList)
