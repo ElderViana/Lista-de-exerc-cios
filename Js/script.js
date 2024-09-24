@@ -118,6 +118,8 @@ const createList = (event) => {
     let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9'];
     let groupList = ['Peito', 'Tríceps', 'Bíceps', 'Costas', 'Perna', 'Antebraço', 'Ombro', 'Antebraço', 'Trapézio'];
     let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
+    
+   
   
    
    
@@ -205,6 +207,21 @@ const select = () => {
     }
 
 }
+const deleteList = (index) => {
+   
+    let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
+  
+    selectGroupList.splice(index, 1);
+  
+    localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
+   
+  }
+  let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
+for(u = 0; u < selectGroupList.length; u++){
+    deleteList(u);
+}
+
+console.log(selectGroupList)
 
 
 
