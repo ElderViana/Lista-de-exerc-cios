@@ -126,7 +126,7 @@ const createList = (event) => {
     console.log(selectGroupList)
     if(selectGroupList.length == 0){
         selectGroupList.push(selectMuscleGroup.value);
-    }
+    } else{
     
   
        
@@ -144,7 +144,7 @@ const createList = (event) => {
 }
            });
            
-        
+    }
     
     
     localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
