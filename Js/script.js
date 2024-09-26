@@ -133,7 +133,7 @@ const createList = (event) => {
            
             
             selectGroupList.forEach((group) => {
-                  for(q = 0; q < groupList.length; q++){
+                  for(q = 0; q < selectGroupList.length; q++){
                     if(selectMuscleGroup.value != group){
              if(group != selectGroupList[q] && selectGroupList[q] != selectMuscleGroup.value){
               
