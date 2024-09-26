@@ -128,23 +128,24 @@ const createList = (event) => {
         selectGroupList.push(selectMuscleGroup.value);
     }
     
-    for(q = 0; q < groupList.length; q++){
-        console.log('t')
-        if(selectGroupList[q] == selectMuscleGroup.value){
+  
+       
            
-            /*
-            groupList.forEach((group) => {
-             if(group != selectGroupList[q]){
+            
+            selectGroupList.forEach((group) => {
+                  for(q = 0; q < groupList.length; q++){
+                    if(selectMuscleGroup.value != group){
+             if(group != groupList[q] && groupList[q] == selectMuscleGroup.value){
               
                     selectGroupList.push(selectMuscleGroup.value);
                 
                 
-            }
-        
+            } }
+}
            });
-           */
-        }
-    }
+           
+        
+    
     
     localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
     for (i = 0; i < exerciseList.length; i++){
