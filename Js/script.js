@@ -127,20 +127,25 @@ const createList = (event) => {
     if(selectGroupList.length == 0){
         selectGroupList.push(selectMuscleGroup.value);
     }
-    for(q = 0; q < selectGroupList.length; q++){
-    groupList.forEach((group) => {
-     
-         
-
-            if(group != selectGroupList[q]){
-                if(selectGroupList[q] == selectMuscleGroup.value){
+    
+    for(q = 0; q < groupList.length; q++){
+        console.log('t')
+        if(selectGroupList[q] == selectMuscleGroup.value){
+           
+            /*
+            groupList.forEach((group) => {
+             if(group != selectGroupList[q]){
+              
                     selectGroupList.push(selectMuscleGroup.value);
                 
-                }
+                
             }
         
-    });
-}
+           });
+           */
+        }
+    }
+    
     localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
     for (i = 0; i < exerciseList.length; i++){
         if(CreateIdList[i] < '9'){
