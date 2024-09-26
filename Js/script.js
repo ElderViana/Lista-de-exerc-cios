@@ -120,7 +120,7 @@ const createList = (event) => {
     let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
     
    
-  
+  let x = false
    
    
     console.log(selectGroupList)
@@ -133,6 +133,15 @@ const createList = (event) => {
            
             
             selectGroupList.forEach((group) => {
+                if(group == selectMuscleGroup.value){
+                    x = true
+                }
+                
+                if(x == false){
+                    selectGroupList.push(selectMuscleGroup.value);
+                }
+                
+                /*
                   for(q = 0; q < selectGroupList.length; q++){
                     if(selectMuscleGroup.value != group){
              if(group != selectGroupList[q] && selectGroupList[q] != selectMuscleGroup.value){
@@ -141,7 +150,7 @@ const createList = (event) => {
                 
                 
             } }
-}
+}*/
            });
            
     }
