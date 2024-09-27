@@ -129,12 +129,12 @@ const createList = (event) => {
     }else{
             selectGroupList.forEach((group) => {
                   for(q = 0; q < groupList.length; q++){
-                        if(selectMuscleGroup.value != group){
+                      
                             if(group != selectMuscleGroup.value && groupList[q] == selectMuscleGroup.value){
               
                                 selectGroupList.push(selectMuscleGroup.value);
                             } 
-                        }
+                        
                     }
            });
            
