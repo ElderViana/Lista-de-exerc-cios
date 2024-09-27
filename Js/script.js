@@ -124,28 +124,22 @@ const createList = (event) => {
    
    
     console.log(selectGroupList)
-    if(selectGroupList.length == 0){
+    if(selectGroupList.length == 0 && selectMuscleGroup.value != ''){
         selectGroupList.push(selectMuscleGroup.value);
-    } else{
-    
-  
-       
-           
-            
+    }else{
             selectGroupList.forEach((group) => {
-                  for(q = 0; q < selectGroupList.length; q++){
-                    if(selectMuscleGroup.value != group){
-             if(group != selectGroupList[q] && selectGroupList[q] != selectMuscleGroup.value){
+                  for(q = 0; q < groupList.length; q++){
+                        if(selectMuscleGroup.value != group){
+                            if(group != selectMuscleGroup.value && groupList[q] == selectMuscleGroup.value){
               
-                    selectGroupList.push(selectMuscleGroup.value);
-                
-                
-            } }
-}
+                                selectGroupList.push(selectMuscleGroup.value);
+                            } 
+                        }
+                    }
            });
            
-    }
-    
+        }
+
     
     localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
     for (i = 0; i < exerciseList.length; i++){
