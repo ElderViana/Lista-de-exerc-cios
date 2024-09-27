@@ -121,7 +121,19 @@ const createList = (event) => {
     
    
   
-   
+    switch(selectMuscleGroup.value) {
+        case 'Peito': 
+            selectGroupList.forEach((group) => {
+                if(group != selectMuscleGroup.value){
+                    
+                }
+    }
+
+
+
+
+
+   /*
    
     console.log(selectGroupList)
     if(selectGroupList.length == 0 && selectMuscleGroup.value != ''){
@@ -139,7 +151,7 @@ const createList = (event) => {
            });
            
         }
-
+*/
     
     localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
     for (i = 0; i < exerciseList.length; i++){
