@@ -118,15 +118,19 @@ const createList = (event) => {
     let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9'];
     let groupList = ['Peito', 'Tríceps', 'Bíceps', 'Costas', 'Perna', 'Antebraço', 'Ombro', 'Antebraço', 'Trapézio'];
     let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
+    let x = [];
     
    
   
-    switch(selectMuscleGroup.value) {
-        case 'Peito': 
             selectGroupList.forEach((group) => {
-                if(group != selectMuscleGroup.value){
-                    
+                if(group == selectMuscleGroup.value){
+                    x.push(selectMuscleGroup.value);
                 }
+    });
+    if(x != []){
+        selectGroupList.push(selectMuscleGroup.value);
+    }else{
+        alert("Por favor escolha outro grupo muscular")
     }
 
 
