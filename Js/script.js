@@ -118,24 +118,50 @@ const createList = (event) => {
     let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9'];
     let groupList = ['Peito', 'Tríceps', 'Bíceps', 'Costas', 'Perna', 'Antebraço', 'Ombro', 'Antebraço', 'Trapézio'];
     let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
-    let x = [];
-    
-   
-  
-            selectGroupList.forEach((group) => {
-                if(group == selectMuscleGroup.value){
-                    x.push(selectMuscleGroup.value);
-                }
-    });
-    if(x != []){
-        selectGroupList.push(selectMuscleGroup.value);
-    }else{
-        alert("Por favor escolha outro grupo muscular")
+    let frequentList = [];
+    console.log(frequentList)
+
+    switch(selectMuscleGroup.value){
+
+        case groupList[0]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        case groupList[1]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        case groupList[2]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        case groupList[3]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        case groupList[4]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        case groupList[5]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        case groupList[6]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        case groupList[7]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        case groupList[8]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        
+
+    }
+    if(frequentList != []){
+        alert(`Por favor exclua os grupos${frequentList[0]} `)
     }
 
+    for(q = 0; q < groupList.length; q++){
+        for(r = 0; r < selectGroupList.length; r++){
+            if(groupList[q] == selectGroupList[r]){
+                frequentList.push(selectMuscleGroup.value);
+            }
+        }
+                      
+        if(group != selectMuscleGroup.value && groupList[q] == selectMuscleGroup.value){
 
+            selectGroupList.push(selectMuscleGroup.value);
+        } 
+    }
 
-
+  
 
    /*
    
