@@ -120,9 +120,7 @@ const createList = (event) => {
     let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
     let frequentList = [];
     console.log(frequentList)
-    if(frequentList.length != 0){
-        alert(`Por favor exclua os grupos${frequentList[0]} `)
-    }
+  
 
     for(q = 0; q < selectGroupList.length; q++){
 
@@ -130,7 +128,9 @@ const createList = (event) => {
                 frequentList.push(selectMuscleGroup.value);
             }
         
-                      
+            if(frequentList.length != 0){
+                alert('Por favor exclua os grupos' + frequentList )
+            }        
        
     }
 
