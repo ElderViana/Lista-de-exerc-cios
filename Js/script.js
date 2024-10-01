@@ -128,11 +128,12 @@ const createList = (event) => {
                 frequentList.push(selectMuscleGroup.value);
             }
         
-            if(frequentList.length != 0){
-                alert('Por favor exclua os grupos' + ' ' + frequentList )
-            }        
+            
        
     }
+    if(frequentList.length != 0){
+        alert('Por favor exclua os grupos' + ' ' + frequentList )
+    }    
 
     switch(selectMuscleGroup.value){
 
