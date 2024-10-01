@@ -150,8 +150,8 @@ const createList = (event) => {
     }
 
     for(q = 0; q < groupList.length; q++){
-        for(r = 0; r < selectGroupList.length; r++){
-            if(groupList[q] == selectGroupList[r]){
+
+        if(groupList[q] == selectGroupList[r]){
                 frequentList.push(selectMuscleGroup.value);
             }
         }
