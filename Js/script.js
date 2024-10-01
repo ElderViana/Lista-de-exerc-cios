@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 
 const exerciseList = [
     {group: 'Peito', name: 'Supino reto com barra', series: '3 ou 4', repetitions: '8 a 15', id: 'p'},
@@ -118,11 +117,10 @@ const createList = (event) => {
     let exerciseList2 = [];
     let idList = [];
     let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9'];
-    let groupList = ['Peito', 'Tríceps', 'Bíceps', 'Costas', 'Perna', 'Antebraço', 'Ombro', 'Antebraço', 'Trapézio'];
+    let groupList = ['Peito', 'Tríceps', 'Bíceps', 'Costas', 'Perna', 'Antebraço', 'Ombro', 'Antebraço', 'Trapézio',  'Abdominal'];
     let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
     let frequentList = [];
-    console.log(frequentList)
-
+if(frequentList.length == 0){
     switch(selectMuscleGroup.value){
 
         case groupList[0]: selectGroupList.push(selectMuscleGroup.value);
@@ -143,27 +141,27 @@ const createList = (event) => {
         break;
         case groupList[8]: selectGroupList.push(selectMuscleGroup.value);
         break;
+        case groupList[9]: selectGroupList.push(selectMuscleGroup.value);
+        break;
         
 
     }
-    if(frequentList != []){
-        alert(`Por favor exclua os grupos${frequentList[0]} `)
-    }
+}else{
+    alert('Oi')
+}
 
-    for(q = 0; q < groupList.length; q++){
-        for(r = 0; r < selectGroupList.length; r++){
-            if(groupList[q] == selectGroupList[r]){
+
+    for(q = 0; q < selectGroupList.length; q++){
+        if(selectGroupList[q] == selectMuscleGroup.value){
                 frequentList.push(selectMuscleGroup.value);
-            }
         }
+            
+        
                       
-        if(group != selectMuscleGroup.value && groupList[q] == selectMuscleGroup.value){
-
-            selectGroupList.push(selectMuscleGroup.value);
-        } 
+      
     }
 
-  
+  console.log(frequentList);
 
    /*
    
@@ -419,4 +417,4 @@ const init = () => {
 }
 
 init(); 
->>>>>>> 78fdab1c4ee7f669e3807479cf5b8e04562c7b02
+
