@@ -116,7 +116,7 @@ const createList = (event) => {
     let exerciseList2 = [];
     let idList = [];
     let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9'];
-    let groupList = ['Peito', 'Tríceps', 'Bíceps', 'Costas', 'Perna', 'Antebraço', 'Ombro', 'Antebraço', 'Trapézio'];
+    let groupList = ['Peito', 'Tríceps', 'Bíceps', 'Costas', 'Perna', 'Antebraço', 'Ombro', 'Antebraço', 'Trapézio', 'Abdominal'];
     let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
     let frequentList = [];
     console.log(frequentList)
@@ -140,6 +140,7 @@ const createList = (event) => {
         case groupList[7]: selectGroupList.push(selectMuscleGroup.value);
         break;
         case groupList[8]: selectGroupList.push(selectMuscleGroup.value);
+        case groupList[9]: selectGroupList.push(selectMuscleGroup.value);
         break;
         
 
