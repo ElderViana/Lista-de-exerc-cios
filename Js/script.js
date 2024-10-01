@@ -1,5 +1,4 @@
 
-
 const exerciseList = [
     {group: 'Peito', name: 'Supino reto com barra', series: '3 ou 4', repetitions: '8 a 15', id: 'p'},
     {group: 'Peito', name: 'Supino reto com halteres', series: '3 ou 4', repetitions: '8 a 15', id: 'd'},
@@ -117,10 +116,11 @@ const createList = (event) => {
     let exerciseList2 = [];
     let idList = [];
     let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9'];
-    let groupList = ['Peito', 'Tríceps', 'Bíceps', 'Costas', 'Perna', 'Antebraço', 'Ombro', 'Antebraço', 'Trapézio',  'Abdominal'];
+    let groupList = ['Peito', 'Tríceps', 'Bíceps', 'Costas', 'Perna', 'Antebraço', 'Ombro', 'Antebraço', 'Trapézio'];
     let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
     let frequentList = [];
-if(frequentList.length == 0){
+    console.log(frequentList)
+
     switch(selectMuscleGroup.value){
 
         case groupList[0]: selectGroupList.push(selectMuscleGroup.value);
@@ -141,27 +141,27 @@ if(frequentList.length == 0){
         break;
         case groupList[8]: selectGroupList.push(selectMuscleGroup.value);
         break;
-        case groupList[9]: selectGroupList.push(selectMuscleGroup.value);
-        break;
         
 
     }
-}else{
-    alert('Oi')
-}
+    if(frequentList != []){
+        alert(`Por favor exclua os grupos${frequentList[0]} `)
+    }
 
-
-    for(q = 0; q < selectGroupList.length; q++){
-        if(selectGroupList[q] == selectMuscleGroup.value){
+    for(q = 0; q < groupList.length; q++){
+        for(r = 0; r < selectGroupList.length; r++){
+            if(groupList[q] == selectGroupList[r]){
                 frequentList.push(selectMuscleGroup.value);
+            }
         }
-            
-        
                       
-      
+        if(group != selectMuscleGroup.value && groupList[q] == selectMuscleGroup.value){
+
+            selectGroupList.push(selectMuscleGroup.value);
+        } 
     }
 
-  console.log(frequentList);
+  
 
    /*
    
@@ -413,8 +413,8 @@ const init = () => {
     submit.addEventListener('click', createList); 
     submit2.addEventListener('click', cleanList);
     select();
+    let c = 2
 
 }
-
+r = 0
 init(); 
-
