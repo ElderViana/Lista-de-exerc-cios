@@ -129,7 +129,7 @@ const createList = (event) => {
             }
         
             if(frequentList.length != 0){
-                alert('Por favor exclua os grupos' + frequentList )
+                alert('Por favor exclua os grupos' + ' ' + frequentList )
             }        
        
     }
