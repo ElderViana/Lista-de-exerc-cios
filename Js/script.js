@@ -120,6 +120,19 @@ const createList = (event) => {
     let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
     let frequentList = [];
     console.log(frequentList)
+    if(frequentList.length != 0){
+        alert(`Por favor exclua os grupos${frequentList[0]} `)
+    }
+
+    for(q = 0; q < selectGroupList.length; q++){
+
+        if(selectGroupList[q] == selectMuscleGroup.value){
+                frequentList.push(selectMuscleGroup.value);
+            }
+        
+                      
+       
+    }
 
     switch(selectMuscleGroup.value){
 
@@ -145,19 +158,7 @@ const createList = (event) => {
         
 
     }
-    if(frequentList != []){
-        alert(`Por favor exclua os grupos${frequentList[0]} `)
-    }
-
-    for(q = 0; q < selectGroupList.length; q++){
-
-        if(selectGroupList[q] == selectMuscleGroup.value){
-                frequentList.push(selectMuscleGroup.value);
-            }
-        
-                      
-       
-    }
+    
 
   
 
