@@ -149,9 +149,9 @@ const createList = (event) => {
         alert(`Por favor exclua os grupos${frequentList[0]} `)
     }
 
-    for(q = 0; q < groupList.length; q++){
+    for(q = 0; q < selectGroupList.length; q++){
 
-        if(groupList[q] == selectGroupList[r]){
+        if(selectGroupList[q] == selectMuscleGroup.value){
                 frequentList.push(selectMuscleGroup.value);
             }
         
