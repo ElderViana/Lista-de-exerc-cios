@@ -413,8 +413,7 @@ const init = () => {
     submit.addEventListener('click', createList); 
     submit2.addEventListener('click', cleanList);
     select();
-    let c = 2
 
 }
-r = 0
+
 init(); 
