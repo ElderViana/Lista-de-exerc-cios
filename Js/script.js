@@ -262,8 +262,9 @@ console.log(chosenList)
 
 
 
- const createTable = () => {
-
+ const createTable = (event) => {
+    event.preventDefault(event);
+console.log('hello')
     const table1 = document.getElementById('exerciseList1');
     const table2 = document.getElementById('exerciseList2');
     const table3 = document.getElementById('exerciseList3');
