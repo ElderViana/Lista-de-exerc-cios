@@ -88,6 +88,7 @@ const exerciseList = [
 const div = document.getElementById('list');
 const submit = document.getElementById('submit');
 const submit2 = document.getElementById('submit2');
+const submit3 = document.getElementById('submit3');
 
 
 const selectModel = document.getElementById('model');
@@ -262,7 +263,7 @@ console.log(chosenList)
 
 
  const createTable = () => {
- 
+
     const table1 = document.getElementById('exerciseList1');
     const table2 = document.getElementById('exerciseList2');
     const table3 = document.getElementById('exerciseList3');
@@ -400,6 +401,7 @@ const init = () => {
 
     submit.addEventListener('click', createList); 
     submit2.addEventListener('click', cleanList);
+    submit3.addEventListener('click', createTable);
     select();
 
 }
