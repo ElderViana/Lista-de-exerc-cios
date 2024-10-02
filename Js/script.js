@@ -123,14 +123,12 @@ const createList = (event) => {
   
 
     for(q = 0; q < selectGroupList.length; q++){
-
         if(selectGroupList[q] == selectMuscleGroup.value){
-                frequentList.push(selectMuscleGroup.value);
-            }
+            frequentList.push(selectMuscleGroup.value);
+        }
         
-            
-       
     }
+
     if(frequentList.length != 0){
         alert('Por favor exclua os grupos' + ' ' + frequentList )
     }    
@@ -154,34 +152,13 @@ const createList = (event) => {
         case groupList[7]: selectGroupList.push(selectMuscleGroup.value);
         break;
         case groupList[8]: selectGroupList.push(selectMuscleGroup.value);
+        break;
         case groupList[9]: selectGroupList.push(selectMuscleGroup.value);
         break;
         
 
     }
     
-
-  
-
-   /*
-   
-    console.log(selectGroupList)
-    if(selectGroupList.length == 0 && selectMuscleGroup.value != ''){
-        selectGroupList.push(selectMuscleGroup.value);
-    }else{
-            selectGroupList.forEach((group) => {
-                  for(q = 0; q < groupList.length; q++){
-                      
-                            if(group != selectMuscleGroup.value && groupList[q] == selectMuscleGroup.value){
-              
-                                selectGroupList.push(selectMuscleGroup.value);
-                            } 
-                        
-                    }
-           });
-           
-        }
-*/
     
     localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
     for (i = 0; i < exerciseList.length; i++){
@@ -255,21 +232,31 @@ const select = () => {
     }
 
 }
+
 const deleteList = (index) => {
    
     let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
+
+       let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
   
     selectGroupList.splice(index, 1);
+    chosenList.splice(index, 1);
   
     localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
+    localStorage.setItem('chosenList', JSON.stringify(chosenList));
    
   }
   let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
+  let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
 for(u = 0; u < selectGroupList.length; u++){
     //deleteList(u)
 }
+for(y = 0; y < chosenList.length; y++){
+    deleteList(y)
+}
 
 console.log(selectGroupList)
+console.log(chosenList)
 
 
 
