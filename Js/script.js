@@ -208,7 +208,7 @@ const createList = (event) => {
 
             }
         }
-  createTable()
+  
         submit.removeEventListener('click', addList);
         submit.addEventListener('click', createList);
  
@@ -252,7 +252,7 @@ for(u = 0; u < selectGroupList.length; u++){
     //deleteList(u)
 }
 for(y = 0; y < chosenList.length; y++){
-    deleteList(y)
+    //deleteList(y)
 }
 
 console.log(selectGroupList)
