@@ -1,7 +1,4 @@
 
-
-
-
 const exerciseList = [
     {group: 'Peito', name: 'Supino reto com barra', series: '3 ou 4', repetitions: '8 a 15', id: 'p'},
     {group: 'Peito', name: 'Supino reto com halteres', series: '3 ou 4', repetitions: '8 a 15', id: 'd'},
@@ -85,7 +82,7 @@ const exerciseList = [
     {group: 'Bíceps', name: 'Rosca bíceps apoiado no banco Scott e com a barra EZ', series: '3 ou 4', repetitions: '8 a 15'}
 
 ];
-let = 't'
+
 
 
 const div = document.getElementById('list');
@@ -415,22 +412,3 @@ const init = () => {
 }
 
 init(); 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> ebed6dc5146442e4c13dd6d96255a1453022b064
