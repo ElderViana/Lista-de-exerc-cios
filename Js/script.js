@@ -85,7 +85,7 @@ const exerciseList = [
     {group: 'Bíceps', name: 'Rosca bíceps apoiado no banco Scott e com a barra EZ', series: '3 ou 4', repetitions: '8 a 15'}
 
 ];
-let oi
+let = 't'
 
 
 const div = document.getElementById('list');
@@ -103,7 +103,9 @@ const createList = (event) => {
     event.preventDefault();
 
     let model = selectModel.value
+    let model2 = selectModel.value
     let weekDays = selectWeekDays.value
+    let weekDays2 = selectWeekDays.value
 
 /*Garantindo que só seja possível alterar o molelo de treino e a quantidade de dias da semana se a lista de exercícios estiver vazia*/
     let chosenList2 = JSON.parse(localStorage.getItem('chosenList'));
@@ -428,4 +430,7 @@ init();
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ebed6dc5146442e4c13dd6d96255a1453022b064
