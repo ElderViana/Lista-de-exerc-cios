@@ -99,7 +99,9 @@ const selectMuscleGroup = document.getElementById('muscleGroup');
 const createList = (event) => {
     event.preventDefault();
 
+    let model = selectModel.value
     let model2 = selectModel.value
+    let weekDays = selectWeekDays.value
     let weekDays2 = selectWeekDays.value
 
 /*Garantindo que só seja possível alterar o molelo de treino e a quantidade de dias da semana se a lista de exercícios estiver vazia*/
