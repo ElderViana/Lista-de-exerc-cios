@@ -96,6 +96,10 @@ const selectWeekDays = document.getElementById('weekDays');
 const selectMuscleGroup = document.getElementById('muscleGroup');
 
 
+
+
+
+
 const createList = (event) => {
     event.preventDefault();
 
@@ -191,6 +195,10 @@ const createList = (event) => {
  
         
     }
+
+
+
+
     const addList = (event) => {
         event.preventDefault();
 
@@ -225,6 +233,9 @@ const createList = (event) => {
 
 }
 
+
+
+
 let model2 = JSON.parse(localStorage.getItem('model'));
 let weekDays2 = JSON.parse(localStorage.getItem('weekDays'));
 console.log(model2, weekDays2);
@@ -237,6 +248,9 @@ const select = () => {
     }
 
 }
+
+
+
 
 const deleteList = (index) => {
    
@@ -266,6 +280,7 @@ for(y = 0; y < chosenList.length; y++){
 
 
  const createTable = (event) => {
+
     event.preventDefault(event);
 
     const table1 = document.getElementById('exerciseList1');
@@ -283,6 +298,14 @@ for(y = 0; y < chosenList.length; y++){
     const tbody6 = table6.querySelector('tbody');
 
     let tableList = [tbody1, tbody2, tbody3, tbody4, tbody5,tbody6];
+    let group1 = [];
+    let group2 = [];
+    let group3 = [];
+    let group4 = [];
+    let group5 = [];
+    let group6 = [];
+    let group7 = [];
+    let group8 = [];
   
   
     for( u = 0; u < tableList.length; u++){
