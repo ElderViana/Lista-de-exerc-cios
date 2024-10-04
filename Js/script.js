@@ -214,7 +214,7 @@ const createList = (event) => {
   
         submit.removeEventListener('click', addList);
         submit.addEventListener('click', createList);
-        createTable()
+        
  
     }
 
@@ -266,7 +266,7 @@ for(y = 0; y < chosenList.length; y++){
 
 
  const createTable = (event) => {
-    //event.preventDefault(event);
+    event.preventDefault(event);
 
     const table1 = document.getElementById('exerciseList1');
     const table2 = document.getElementById('exerciseList2');
@@ -283,9 +283,8 @@ for(y = 0; y < chosenList.length; y++){
     const tbody6 = table6.querySelector('tbody');
 
     let tableList = [tbody1, tbody2, tbody3, tbody4, tbody5,tbody6];
-    let groupList = [];
   
-    groupList.push(selectMuscleGroup.value);
+  
     for( u = 0; u < tableList.length; u++){
 
         const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
