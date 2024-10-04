@@ -309,9 +309,29 @@ for(y = 0; y < chosenList.length; y++){
     const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
 
     chosenList.forEach((chosen) => {
-        if(chosen.group == 'Peito' || chosen.group == 'Tríceps' || chosen.group == 'Atebraço' || chosen.group == 'Abdominal'){
+
+        if(chosen.group == 'Peito' || chosen.group == 'Tríceps' || chosen.group == 'Antebraço' || chosen.group == 'Abdominal'){
             group1.push(chosen);
         }
+        if(chosen.group == 'Costas' || chosen.group == 'Bíceps' || chosen.group == 'Ombro' || chosen.group == 'Abdominal'){
+            group1.push(chosen);
+        }
+        if(chosen.group == 'Perna'){
+            group1.push(chosen);
+        }
+        if(chosen.group == 'Peito'){
+            group1.push(chosen);
+        }
+        if(chosen.group == 'C'){
+            group1.push(chosen);
+        }
+        if(chosen.group == 'Perna'){
+            group1.push(chosen);
+        }
+        if(chosen.group == 'Perna'){
+            group1.push(chosen);
+        }
+   
 
     });
 
