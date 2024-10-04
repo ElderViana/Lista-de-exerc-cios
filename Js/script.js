@@ -289,7 +289,7 @@ for(y = 0; y < chosenList.length; y++){
     for( u = 0; u < tableList.length; u++){
 
         const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
-/*
+
         if(weekDays2 == '5 dias'){
             if(model2 == 'ABC'){
                 tableList[u].innerHTML = 
@@ -339,7 +339,7 @@ for(y = 0; y < chosenList.length; y++){
          
 
         }
-*/
+
         if(weekDays2== '6 dias'){
             if(model2 == 'ABC'){
                 tableList[u].innerHTML = 
@@ -365,7 +365,7 @@ for(y = 0; y < chosenList.length; y++){
             
             
             }
-    /*
+    
             if(model2 == 'ABCDE'){
                 tableList[u].innerHTML = 
                 `<tr>
@@ -387,7 +387,7 @@ for(y = 0; y < chosenList.length; y++){
               });
               
             }
-*/
+
             
         }
 
