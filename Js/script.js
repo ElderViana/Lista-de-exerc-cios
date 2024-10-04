@@ -306,11 +306,22 @@ for(y = 0; y < chosenList.length; y++){
     let group6 = [];
     let group7 = [];
     let group8 = [];
+    const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
+
+    chosenList.forEach((chosen) => {
+        if(chosen.group == 'Peito' || chosen.group == 'Tríceps' || chosen.group == 'Atebraço' ||| chosen.group == 'Abdominal'){
+            group1.push(chosen);
+        }
+
+    });
+
+console.log(group1);
+
   
   
     for( u = 0; u < tableList.length; u++){
 
-        const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
+       
 
         if(weekDays2 == '5 dias'){
             if(model2 == 'ABC'){
