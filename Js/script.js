@@ -305,7 +305,7 @@ for(y = 0; y < chosenList.length; y++){
     let group5 = [];
     let group6 = [];
     let group7 = [];
-    let group8 = [];
+  
     const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
 
     chosenList.forEach((chosen) => {
@@ -314,28 +314,27 @@ for(y = 0; y < chosenList.length; y++){
             group1.push(chosen);
         }
         if(chosen.group == 'Costas' || chosen.group == 'Bíceps' || chosen.group == 'Ombro' || chosen.group == 'Abdominal'){
-            group1.push(chosen);
+            group2.push(chosen);
         }
         if(chosen.group == 'Perna'){
-            group1.push(chosen);
+            group3.push(chosen);
         }
-        if(chosen.group == 'Peito'){
-            group1.push(chosen);
+        if(chosen.group == 'Peito' || chosen.group == 'Abdominal'){
+            group4.push(chosen);
         }
-        if(chosen.group == 'C'){
-            group1.push(chosen);
+        if(chosen.group == 'Costas' || chosen.group == 'Abdominal'){
+            group5.push(chosen);
         }
-        if(chosen.group == 'Perna'){
-            group1.push(chosen);
+        if(chosen.group == 'Bíceps' || chosen.group == 'Ombro'){
+            group6.push(chosen);
         }
-        if(chosen.group == 'Perna'){
-            group1.push(chosen);
+        if(chosen.group == 'Tríceps' || chosen.group == 'Antebraço'){
+            group7.push(chosen);
         }
    
 
     });
 
-console.log(group1);
 
   
   
@@ -448,7 +447,7 @@ console.log(group1);
        
       
     }
-    console.log(chosenList)
+  
 }
 
 
