@@ -305,6 +305,11 @@ for(y = 0; y < chosenList.length; y++){
     let group5 = [];
     let group6 = [];
     let group7 = [];
+
+    let groupList = [group1, group2, group3, group4, group5,group6, group7];
+
+    let PhrasesList = ['Peito + Tríceps +  Antebraço + Abdominal', 'Costas + Bíceps +  Ombro + Abdominal', 'Perna',  'Peito + Abdominal', 'Costas + Abdominal', 'Bíceps + Ombro', 'Tríceps + Antebraço'];
+
   
     const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
 
@@ -313,22 +318,25 @@ for(y = 0; y < chosenList.length; y++){
         if(chosen.group == 'Peito' || chosen.group == 'Tríceps' || chosen.group == 'Antebraço' || chosen.group == 'Abdominal'){
             group1.push(chosen);
         }
+    
         if(chosen.group == 'Costas' || chosen.group == 'Bíceps' || chosen.group == 'Ombro' || chosen.group == 'Abdominal'){
             group2.push(chosen);
         }
-        if(chosen.group == 'Perna'){
+
+        if(chosen.group == 'Peito' || chosen.group == 'Abdominal'){
             group3.push(chosen);
         }
-        if(chosen.group == 'Peito' || chosen.group == 'Abdominal'){
+        if(chosen.group == 'Bíceps' || chosen.group == 'Ombro'){
             group4.push(chosen);
         }
         if(chosen.group == 'Costas' || chosen.group == 'Abdominal'){
             group5.push(chosen);
         }
-        if(chosen.group == 'Bíceps' || chosen.group == 'Ombro'){
+     
+        if(chosen.group == 'Tríceps' || chosen.group == 'Antebraço'){
             group6.push(chosen);
         }
-        if(chosen.group == 'Tríceps' || chosen.group == 'Antebraço'){
+        if(chosen.group == 'Perna'){
             group7.push(chosen);
         }
    
@@ -338,33 +346,36 @@ for(y = 0; y < chosenList.length; y++){
 
   
   
-    for( u = 0; u < tableList.length; u++){
+    for( u = 0; u < groupList.length; u++){
 
        
 
         if(weekDays2 == '5 dias'){
             if(model2 == 'ABC'){
-                tableList[u].innerHTML = 
-                `<tr>
-                <th>Treino1: Peito + Tríceps + Antebraço + Abdominal</th>
-                <th>Quantidade de séries</th>
-                <th>Quantidade de repetições</th>  
-                </tr>`;
-              
-                chosenList.forEach((chosenList, index) => {
-                    
-                const taskContent = 
-                `<tr>
-                    <td>${chosenList.name}</td>
-                    <td>${chosenList.series}</td>
-                    <td>${chosenList.repetitions}</td>
-                </tr>`;
-                const row = tableList[u].insertRow();
-                row.innerHTML = taskContent;
-                    
-              });
+                if(group1.length != 0){
+                    tableList[u].innerHTML = 
+                    `<tr>
+                    <th>Treino1: ${PhrasesList[u]}</th>
+                    <th>Quantidade de séries</th>
+                    <th>Quantidade de repetições</th>  
+                    </tr>`;
+                
+                    groupList[u].forEach((group1, index) => {
+                        
+                    const taskContent = 
+                    `<tr>
+                        <td>${group1.name}</td>
+                        <td>${group1.series}</td>
+                        <td>${group1.repetitions}</td>
+                    </tr>`;
+                    const row = tableList[u].insertRow();
+                    row.innerHTML = taskContent;
+                        
+                    });
+                }
             
             }
+        
     
             if(model2 == 'ABCDE'){
                 tableList[u].innerHTML = 
