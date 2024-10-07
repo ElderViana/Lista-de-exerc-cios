@@ -84,6 +84,7 @@ const exerciseList = [
 ];
 
 
+const cleanList = () => {}
 
 const div = document.getElementById('list');
 const submit = document.getElementById('submit');
@@ -474,7 +475,6 @@ for(y = 0; y < chosenList.length; y++){
 }
 
 
-const cleanList = () => {}
 
 
 const init = () => {
