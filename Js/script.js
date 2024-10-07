@@ -281,7 +281,7 @@ for(y = 0; y < chosenList.length; y++){
 
  const createTable = (event) => {
 
-    event.preventDefault(event);
+   // event.preventDefault(event);
 
     const table1 = document.getElementById('exerciseList1');
     const table2 = document.getElementById('exerciseList2');
@@ -426,6 +426,7 @@ for(y = 0; y < chosenList.length; y++){
                             <td>${chosenList.name}</td>
                             <td>${chosenList.series}</td>
                             <td>${chosenList.repetitions}</td>
+                             <td><button class="btnDelete" onclick="deleteList(${index})"><i class="fa fa-trash fa-3x" aria-hidden="true"></</button></td>
                         </tr>`;
                         const row = tableList[c].insertRow();
                         row.innerHTML = taskContent;
