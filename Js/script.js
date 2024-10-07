@@ -306,9 +306,11 @@ for(y = 0; y < chosenList.length; y++){
     let group6 = [];
     let group7 = [];
 
-    let groupList = [group1, group2, group3, group4, group5,group6, group7];
+    let groupList1 = [group1, group7, group2];
+    let groupList2 = [group3, group4,group5, group6, group7];
 
-    let PhrasesList = ['Peito + Tríceps +  Antebraço + Abdominal', 'Costas + Bíceps +  Ombro + Abdominal', 'Perna',  'Peito + Abdominal', 'Costas + Abdominal', 'Bíceps + Ombro', 'Tríceps + Antebraço'];
+    let PhrasesList1 = ['Peito + Tríceps +  Antebraço + Abdominal', 'Perna', 'Costas + Bíceps +  Ombro + Abdominal'];
+    let PhrasesList2 = ['Peito + Abdominal', 'Bíceps + Ombro', 'Costas + Abdominal', 'Tríceps + Antebraço', 'Perna'];
 
   
     const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
