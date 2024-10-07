@@ -253,7 +253,7 @@ const select = () => {
 
 
 const deleteList = (index) => {
-   
+    cleanList();
     let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
 
        let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
@@ -263,7 +263,7 @@ const deleteList = (index) => {
   
     localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
     localStorage.setItem('chosenList', JSON.stringify(chosenList));
-    cleanList();
+   
    
   }
   let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
