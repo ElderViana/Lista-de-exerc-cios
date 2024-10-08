@@ -373,6 +373,7 @@ for(y = 0; y < chosenList.length; y++){
                         <td>${group1.name}</td>
                         <td>${group1.series}</td>
                         <td>${group1.repetitions}</td>
+                          <td><button class="btnDelete" onclick="deleteList(${index})"><i class="fa-solid fa-trash-can"></i></</button></td>git 
                     </tr>`;
                     const row = tableList[a].insertRow();
                     row.innerHTML = taskContent;
@@ -399,6 +400,7 @@ for(y = 0; y < chosenList.length; y++){
                         <td>${chosenList.name}</td>
                         <td>${chosenList.series}</td>
                         <td>${chosenList.repetitions}</td>
+                          <td><button class="btnDelete" onclick="deleteList(${index})"><i class="fa-solid fa-trash-can"></i></</button></td>
                     </tr>`;
                     const row = tableList[b].insertRow();
                     row.innerHTML = taskContent;
@@ -428,7 +430,7 @@ for(y = 0; y < chosenList.length; y++){
                             <td>${chosenList.name}</td>
                             <td>${chosenList.series}</td>
                             <td>${chosenList.repetitions}</td>
-                             <td><button class="btnDelete" onclick="deleteList(${index})"><i class="fa fa-trash fa-3x" aria-hidden="true"></</button></td>
+                             <td><button class="btnDelete" onclick="deleteList(${index})"><i class="fa-solid fa-trash-can"></i></</button></td>
                         </tr>`;
                         const row = tableList[c].insertRow();
                         row.innerHTML = taskContent;
@@ -455,6 +457,7 @@ for(y = 0; y < chosenList.length; y++){
                         <td>${chosenList.name}</td>
                         <td>${chosenList.series}</td>
                         <td>${chosenList.repetitions}</td>
+                        <td><button class="btnDelete" onclick="deleteList(${index})"><i class="fa-solid fa-trash-can"></i></</button></td>
                     </tr>`;
                     const row = tableList[d].insertRow();
                     row.innerHTML = taskContent;
