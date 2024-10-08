@@ -252,9 +252,8 @@ const select = () => {
 
 
 
-
 const deleteList = (index) => {
-    cleanList();
+ 
     let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
 
        let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
