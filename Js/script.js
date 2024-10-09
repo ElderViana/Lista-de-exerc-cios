@@ -84,6 +84,240 @@ const exerciseList = [
 ];
 
 
+const createTable = (event) => {
+
+    //event.preventDefault(event);
+
+    const table1 = document.getElementById('exerciseList1');
+    const table2 = document.getElementById('exerciseList2');
+    const table3 = document.getElementById('exerciseList3');
+    const table4 = document.getElementById('exerciseList4');
+    const table5 = document.getElementById('exerciseList5');
+    const table6 = document.getElementById('exerciseList6');
+
+    const tbody1 = table1.querySelector('tbody');
+    const tbody2 = table2.querySelector('tbody');
+    const tbody3 = table3.querySelector('tbody');
+    const tbody4 = table4.querySelector('tbody');
+    const tbody5 = table5.querySelector('tbody');
+    const tbody6 = table6.querySelector('tbody');
+
+    let tableList = [tbody1, tbody2, tbody3, tbody4, tbody5,tbody6];
+    let group1 = [];
+    let group2 = [];
+    let group3 = [];
+    let group4 = [];
+    let group5 = [];
+    let group6 = [];
+    let group7 = [];
+
+    let groupList1 = [group1, group7, group2, group1,group7, group2];
+    let groupList2 = [group7, group3, group4,group5, group6, group7];
+
+    let PhrasesList1 = ['Peito + Tríceps +  Antebraço + Abdominal', 'Perna', 'Costas + Bíceps +  Ombro + Abdominal', 'Peito + Tríceps +  Antebraço + Abdominal','Perna', 'Costas + Bíceps +  Ombro + Abdominal'];
+    let PhrasesList2 = ['Perna', 'Peito + Abdominal', 'Bíceps + Ombro', 'Costas + Abdominal', 'Tríceps + Antebraço', 'Perna'];
+
+  
+    const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
+
+    chosenList.forEach((chosen) => {
+
+        if(chosen.group == 'Peito' || chosen.group == 'Tríceps' || chosen.group == 'Antebraço' || chosen.group == 'Abdominal'){
+            group1.push(chosen);
+        }
+    
+        if(chosen.group == 'Costas' || chosen.group == 'Bíceps' || chosen.group == 'Ombro' || chosen.group == 'Abdominal'){
+            group2.push(chosen);
+        }
+
+        if(chosen.group == 'Peito' || chosen.group == 'Abdominal'){
+            group3.push(chosen);
+        }
+        if(chosen.group == 'Bíceps' || chosen.group == 'Ombro'){
+            group4.push(chosen);
+        }
+        if(chosen.group == 'Costas' || chosen.group == 'Abdominal'){
+            group5.push(chosen);
+        }
+     
+        if(chosen.group == 'Tríceps' || chosen.group == 'Antebraço'){
+            group6.push(chosen);
+        }
+        if(chosen.group == 'Perna'){
+            group7.push(chosen);
+        }
+   
+
+    });
+
+
+  
+  
+  
+
+    for( u = 0; u < groupList1.length; u++){
+
+        if(weekDays2 == '5 dias'){
+            if(model2 == 'ABC'){
+               
+                   
+                for(a = 0; a < 5; a++){
+                    tableList[a].innerHTML = 
+                    `<tr>
+                    <th> ${PhrasesList1[a]}</th>
+                    <th>Quantidade de séries</th>
+                    <th>Quantidade de repetições</th>  
+                    </tr>`;
+                
+                    groupList1[a].forEach((group1, index) => {
+                        
+                    const taskContent = 
+                    `<tr>
+                        <td>${group1.name}</td>
+                        <td>${group1.series}</td>
+                        <td>${group1.repetitions}</td>
+                          <td><button class="btnDelete" onclick="deleteList(${index})"><i class="fa-solid fa-trash-can"></i></</button></td>git 
+                    </tr>`;
+                    const row = tableList[a].insertRow();
+                    row.innerHTML = taskContent;
+                        
+                    });
+                }
+            
+            
+            }
+           
+    
+            if(model2 == 'ABCDE'){
+                for(b = 0; b < 5; b++){
+                    tableList[b].innerHTML = 
+                    `<tr>
+                    <th>${PhrasesList2[b]}</th>
+                    <th>Quantidade de séries</th>
+                    <th>Quantidade de repetições</th>  
+                    </tr>`;
+            
+                    groupList2[b].forEach((chosenList, index) => {
+                    const taskContent = 
+                    `<tr>
+                        <td>${chosenList.name}</td>
+                        <td>${chosenList.series}</td>
+                        <td>${chosenList.repetitions}</td>
+                          <td><button class="btnDelete" onclick="deleteList(${index})"><i class="fa-solid fa-trash-can"></i></</button></td>
+                    </tr>`;
+                    const row = tableList[b].insertRow();
+                    row.innerHTML = taskContent;
+                
+                    });
+                }
+              
+            }
+
+         
+
+        }
+
+        if(weekDays2== '6 dias'){
+            if(model2 == 'ABC'){
+                for(c = 0; c < 6; c++){
+                    tableList[c].innerHTML = 
+                    `<tr>
+                    <th>${PhrasesList1[c]}</th>
+                    <th>Quantidade de séries</th>
+                    <th>Quantidade de repetições</th>  
+                    </tr>`;
+                
+                    groupList1[c].forEach((chosenList, index) => {
+                        const taskContent = 
+                        `<tr>
+                            <td>${chosenList.name}</td>
+                            <td>${chosenList.series}</td>
+                            <td>${chosenList.repetitions}</td>
+                             <td><button class="btnDelete" onclick="deleteList(${index})"><i class="fa-solid fa-trash-can"></i></</button></td>
+                        </tr>`;
+                        const row = tableList[c].insertRow();
+                        row.innerHTML = taskContent;
+                        
+                
+                    });
+                }
+            
+            
+            }
+    
+            if(model2 == 'ABCDE'){
+                for(d = 0; d < 6; d++){
+                    tableList[d].innerHTML = 
+                    `<tr>
+                    <th>${PhrasesList2[d]}</th>
+                    <th>Quantidade de séries</th>
+                    <th>Quantidade de repetições</th>  
+                    </tr>`;
+            
+                    groupList2[d].forEach((chosenList, index) => {
+                    const taskContent = 
+                    `<tr>
+                        <td>${chosenList.name}</td>
+                        <td>${chosenList.series}</td>
+                        <td>${chosenList.repetitions}</td>
+                        <td><button class="btnDelete" onclick="deleteList(${index})"><i class="fa-solid fa-trash-can"></i></</button></td>
+                    </tr>`;
+                    const row = tableList[d].insertRow();
+                    row.innerHTML = taskContent;
+                
+                    });
+                }
+              
+            }
+
+            
+        }
+
+     
+       
+      
+    }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const cleanList = () => {}
 
 const div = document.getElementById('list');
@@ -284,201 +518,6 @@ for(y = 0; y < chosenList.length; y++){
 
 
 
- const createTable = (event) => {
-
-    //event.preventDefault(event);
-
-    const table1 = document.getElementById('exerciseList1');
-    const table2 = document.getElementById('exerciseList2');
-    const table3 = document.getElementById('exerciseList3');
-    const table4 = document.getElementById('exerciseList4');
-    const table5 = document.getElementById('exerciseList5');
-    const table6 = document.getElementById('exerciseList6');
-
-    const tbody1 = table1.querySelector('tbody');
-    const tbody2 = table2.querySelector('tbody');
-    const tbody3 = table3.querySelector('tbody');
-    const tbody4 = table4.querySelector('tbody');
-    const tbody5 = table5.querySelector('tbody');
-    const tbody6 = table6.querySelector('tbody');
-
-    let tableList = [tbody1, tbody2, tbody3, tbody4, tbody5,tbody6];
-    let group1 = [];
-    let group2 = [];
-    let group3 = [];
-    let group4 = [];
-    let group5 = [];
-    let group6 = [];
-    let group7 = [];
-
-    let groupList1 = [group1, group7, group2, group1,group7, group2];
-    let groupList2 = [group7, group3, group4,group5, group6, group7];
-
-    let PhrasesList1 = ['Peito + Tríceps +  Antebraço + Abdominal', 'Perna', 'Costas + Bíceps +  Ombro + Abdominal', 'Peito + Tríceps +  Antebraço + Abdominal','Perna', 'Costas + Bíceps +  Ombro + Abdominal'];
-    let PhrasesList2 = ['Perna', 'Peito + Abdominal', 'Bíceps + Ombro', 'Costas + Abdominal', 'Tríceps + Antebraço', 'Perna'];
-
-  
-    const chosenList = JSON.parse(localStorage.getItem('chosenList'))|| [];
-
-    chosenList.forEach((chosen) => {
-
-        if(chosen.group == 'Peito' || chosen.group == 'Tríceps' || chosen.group == 'Antebraço' || chosen.group == 'Abdominal'){
-            group1.push(chosen);
-        }
-    
-        if(chosen.group == 'Costas' || chosen.group == 'Bíceps' || chosen.group == 'Ombro' || chosen.group == 'Abdominal'){
-            group2.push(chosen);
-        }
-
-        if(chosen.group == 'Peito' || chosen.group == 'Abdominal'){
-            group3.push(chosen);
-        }
-        if(chosen.group == 'Bíceps' || chosen.group == 'Ombro'){
-            group4.push(chosen);
-        }
-        if(chosen.group == 'Costas' || chosen.group == 'Abdominal'){
-            group5.push(chosen);
-        }
-     
-        if(chosen.group == 'Tríceps' || chosen.group == 'Antebraço'){
-            group6.push(chosen);
-        }
-        if(chosen.group == 'Perna'){
-            group7.push(chosen);
-        }
-   
-
-    });
-
-
-  
-  
-  
-
-    for( u = 0; u < groupList1.length; u++){
-
-        if(weekDays2 == '5 dias'){
-            if(model2 == 'ABC'){
-               
-                   
-                for(a = 0; a < 5; a++){
-                    tableList[a].innerHTML = 
-                    `<tr>
-                    <th> ${PhrasesList1[a]}</th>
-                    <th>Quantidade de séries</th>
-                    <th>Quantidade de repetições</th>  
-                    </tr>`;
-                
-                    groupList1[a].forEach((group1, index) => {
-                        
-                    const taskContent = 
-                    `<tr>
-                        <td>${group1.name}</td>
-                        <td>${group1.series}</td>
-                        <td>${group1.repetitions}</td>
-                          <td><button class="btnDelete" onclick="deleteList(${index})"><i class="fa-solid fa-trash-can"></i></</button></td>git 
-                    </tr>`;
-                    const row = tableList[a].insertRow();
-                    row.innerHTML = taskContent;
-                        
-                    });
-                }
-            
-            
-            }
-           
-    
-            if(model2 == 'ABCDE'){
-                for(b = 0; b < 5; b++){
-                    tableList[b].innerHTML = 
-                    `<tr>
-                    <th>${PhrasesList2[b]}</th>
-                    <th>Quantidade de séries</th>
-                    <th>Quantidade de repetições</th>  
-                    </tr>`;
-            
-                    groupList2[b].forEach((chosenList, index) => {
-                    const taskContent = 
-                    `<tr>
-                        <td>${chosenList.name}</td>
-                        <td>${chosenList.series}</td>
-                        <td>${chosenList.repetitions}</td>
-                          <td><button class="btnDelete" onclick="deleteList(${index})"><i class="fa-solid fa-trash-can"></i></</button></td>
-                    </tr>`;
-                    const row = tableList[b].insertRow();
-                    row.innerHTML = taskContent;
-                
-                    });
-                }
-              
-            }
-
-         
-
-        }
-
-        if(weekDays2== '6 dias'){
-            if(model2 == 'ABC'){
-                for(c = 0; c < 6; c++){
-                    tableList[c].innerHTML = 
-                    `<tr>
-                    <th>${PhrasesList1[c]}</th>
-                    <th>Quantidade de séries</th>
-                    <th>Quantidade de repetições</th>  
-                    </tr>`;
-                
-                    groupList1[c].forEach((chosenList, index) => {
-                        const taskContent = 
-                        `<tr>
-                            <td>${chosenList.name}</td>
-                            <td>${chosenList.series}</td>
-                            <td>${chosenList.repetitions}</td>
-                             <td><button class="btnDelete" onclick="deleteList(${index})"><i class="fa-solid fa-trash-can"></i></</button></td>
-                        </tr>`;
-                        const row = tableList[c].insertRow();
-                        row.innerHTML = taskContent;
-                        
-                
-                    });
-                }
-            
-            
-            }
-    
-            if(model2 == 'ABCDE'){
-                for(d = 0; d < 6; d++){
-                    tableList[d].innerHTML = 
-                    `<tr>
-                    <th>${PhrasesList2[d]}</th>
-                    <th>Quantidade de séries</th>
-                    <th>Quantidade de repetições</th>  
-                    </tr>`;
-            
-                    groupList2[d].forEach((chosenList, index) => {
-                    const taskContent = 
-                    `<tr>
-                        <td>${chosenList.name}</td>
-                        <td>${chosenList.series}</td>
-                        <td>${chosenList.repetitions}</td>
-                        <td><button class="btnDelete" onclick="deleteList(${index})"><i class="fa-solid fa-trash-can"></i></</button></td>
-                    </tr>`;
-                    const row = tableList[d].insertRow();
-                    row.innerHTML = taskContent;
-                
-                    });
-                }
-              
-            }
-
-            
-        }
-
-     
-       
-      
-    }
-  
-}
 
 
 
