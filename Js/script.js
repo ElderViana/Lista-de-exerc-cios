@@ -84,7 +84,207 @@ const exerciseList = [
 ];
 
 
-const createTable = (event) => {
+const cleanList = () => {}
+
+const div = document.getElementById('list');
+const submit = document.getElementById('submit');
+const submit2 = document.getElementById('submit2');
+const submit3 = document.getElementById('submit3');
+
+
+const selectModel = document.getElementById('model');
+const selectWeekDays = document.getElementById('weekDays');
+const selectMuscleGroup = document.getElementById('muscleGroup');
+
+
+
+
+
+
+const createList = (event) => {
+    event.preventDefault();
+
+    let model = selectModel.value
+    let model2 = selectModel.value
+    let weekDays = selectWeekDays.value
+    let weekDays2 = selectWeekDays.value
+
+/*Garantindo que só seja possível alterar o molelo de treino e a quantidade de dias da semana se a lista de exercícios estiver vazia*/
+    let chosenList2 = JSON.parse(localStorage.getItem('chosenList'));
+ 
+    if(selectModel.value != model2 || selectWeekDays.value != weekDays2 && chosenList2.length != 0){
+        alert("Por favor exclua a lista de execícios antes de escolher outro modelo de treino ou outro modelo de dias da semana");
+    }else{
+        localStorage.setItem('model', JSON.stringify(model));
+        localStorage.setItem('weekDays', JSON.stringify(weekDays));
+        }
+
+
+    let checkedIdList = [];
+    let exerciseList2 = [];
+    let idList = [];
+    let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9'];
+    let groupList = ['Peito', 'Tríceps', 'Bíceps', 'Costas', 'Perna', 'Antebraço', 'Ombro', 'Antebraço', 'Trapézio', 'Abdominal'];
+    let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
+    let frequentList = [];
+    console.log(frequentList)
+  
+
+    for(q = 0; q < selectGroupList.length; q++){
+        if(selectGroupList[q] == selectMuscleGroup.value){
+            frequentList.push(selectMuscleGroup.value);
+        }
+        
+    }
+
+    if(frequentList.length != 0){
+        alert('Por favor exclua os grupos' + ' ' + frequentList )
+    }    
+
+    switch(selectMuscleGroup.value){
+
+        case groupList[0]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        case groupList[1]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        case groupList[2]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        case groupList[3]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        case groupList[4]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        case groupList[5]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        case groupList[6]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        case groupList[7]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        case groupList[8]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        case groupList[9]: selectGroupList.push(selectMuscleGroup.value);
+        break;
+        
+
+    }
+    
+    
+    localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
+    for (i = 0; i < exerciseList.length; i++){
+        if(CreateIdList[i] < '9'){
+            CreateIdList.push(CreateIdList[i] + CreateIdList.length);
+        }
+        
+        if(exerciseList[i].group == selectMuscleGroup.value){
+            
+            let muscleGroup = document.createElement('input');
+            let br = document.createElement('br');
+            let lable = document.createElement('lable');
+
+            lable.textContent = exerciseList[i].name
+            muscleGroup.type = 'checkbox';
+            muscleGroup.vale = exerciseList[i].name
+            muscleGroup.id = exerciseList[i].group + CreateIdList[i];
+            idList.push(muscleGroup);
+            checkedIdList.push(muscleGroup);
+            exerciseList2.push(exerciseList[i]);
+            
+            div.appendChild(muscleGroup);
+            div.appendChild(lable);
+            div.appendChild(br);
+                 
+        }
+ 
+        
+    }
+
+
+
+
+    const addList = (event) => {
+        event.preventDefault();
+        let form = document.getElementById('form');
+
+        for(i = 0; i < exerciseList2.length; i++){
+            if(idList[i].checked == true){
+                
+                if(idList[i].id == checkedIdList[i].id){
+                   
+                    if(exerciseList2[i].group == selectMuscleGroup.value){
+                        let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
+                        chosenList.push(exerciseList2[i]);
+                        localStorage.setItem('chosenList', JSON.stringify(chosenList));
+                      
+
+                    }
+
+                }
+
+            }
+        }
+  
+        submit.removeEventListener('click', addList);
+        submit.addEventListener('click', createList);
+        form.reset();
+        createTable()
+ 
+    }
+
+    submit.removeEventListener('click', createList);
+    submit.addEventListener('click', addList);
+    createTable()
+  
+
+
+}
+
+
+
+
+let model2 = JSON.parse(localStorage.getItem('model'));
+let weekDays2 = JSON.parse(localStorage.getItem('weekDays'));
+console.log(model2, weekDays2);
+
+const select = () => {
+
+    if(model2 != '' || weekDays2 != '') {
+        document.getElementById('model').value =  JSON.parse(localStorage.getItem('model'));
+        document.getElementById('weekDays').value =  JSON.parse(localStorage.getItem('weekDays'));
+    }
+
+}
+
+
+
+const deleteList = (index) => {
+ 
+    let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
+
+       let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
+  
+    selectGroupList.splice(index, 1);
+    chosenList.splice(index, 1);
+  
+    localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
+    localStorage.setItem('chosenList', JSON.stringify(chosenList));
+      createTable()
+   
+   
+  }
+  let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
+  let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
+for(u = 0; u < selectGroupList.length; u++){
+    //deleteList(u)
+}
+for(y = 0; y < chosenList.length; y++){
+    //deleteList(y)
+}
+
+
+
+
+
+
+ const createTable = (event) => {
 
     //event.preventDefault(event);
 
@@ -283,252 +483,12 @@ const createTable = (event) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const cleanList = () => {}
-
-const div = document.getElementById('list');
-const submit = document.getElementById('submit');
-const submit2 = document.getElementById('submit2');
-const submit3 = document.getElementById('submit3');
-
-
-const selectModel = document.getElementById('model');
-const selectWeekDays = document.getElementById('weekDays');
-const selectMuscleGroup = document.getElementById('muscleGroup');
-
-
-
-
-
-
-const createList = (event) => {
-    event.preventDefault();
-
-    let model = selectModel.value
-    let model2 = selectModel.value
-    let weekDays = selectWeekDays.value
-    let weekDays2 = selectWeekDays.value
-
-/*Garantindo que só seja possível alterar o molelo de treino e a quantidade de dias da semana se a lista de exercícios estiver vazia*/
-    let chosenList2 = JSON.parse(localStorage.getItem('chosenList'));
- 
-    if(selectModel.value != model2 || selectWeekDays.value != weekDays2 && chosenList2.length != 0){
-        alert("Por favor exclua a lista de execícios antes de escolher outro modelo de treino ou outro modelo de dias da semana");
-    }else{
-        localStorage.setItem('model', JSON.stringify(model));
-        localStorage.setItem('weekDays', JSON.stringify(weekDays));
-        }
-
-
-    let checkedIdList = [];
-    let exerciseList2 = [];
-    let idList = [];
-    let CreateIdList = ['1', '2', '3', '4', '6', '7', '8', '9'];
-    let groupList = ['Peito', 'Tríceps', 'Bíceps', 'Costas', 'Perna', 'Antebraço', 'Ombro', 'Antebraço', 'Trapézio', 'Abdominal'];
-    let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
-    let frequentList = [];
-    console.log(frequentList)
-  
-
-    for(q = 0; q < selectGroupList.length; q++){
-        if(selectGroupList[q] == selectMuscleGroup.value){
-            frequentList.push(selectMuscleGroup.value);
-        }
-        
-    }
-
-    if(frequentList.length != 0){
-        alert('Por favor exclua os grupos' + ' ' + frequentList )
-    }    
-
-    switch(selectMuscleGroup.value){
-
-        case groupList[0]: selectGroupList.push(selectMuscleGroup.value);
-        break;
-        case groupList[1]: selectGroupList.push(selectMuscleGroup.value);
-        break;
-        case groupList[2]: selectGroupList.push(selectMuscleGroup.value);
-        break;
-        case groupList[3]: selectGroupList.push(selectMuscleGroup.value);
-        break;
-        case groupList[4]: selectGroupList.push(selectMuscleGroup.value);
-        break;
-        case groupList[5]: selectGroupList.push(selectMuscleGroup.value);
-        break;
-        case groupList[6]: selectGroupList.push(selectMuscleGroup.value);
-        break;
-        case groupList[7]: selectGroupList.push(selectMuscleGroup.value);
-        break;
-        case groupList[8]: selectGroupList.push(selectMuscleGroup.value);
-        break;
-        case groupList[9]: selectGroupList.push(selectMuscleGroup.value);
-        break;
-        
-
-    }
-    
-    
-    localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
-    for (i = 0; i < exerciseList.length; i++){
-        if(CreateIdList[i] < '9'){
-            CreateIdList.push(CreateIdList[i] + CreateIdList.length);
-        }
-        
-        if(exerciseList[i].group == selectMuscleGroup.value){
-            
-            let muscleGroup = document.createElement('input');
-            let br = document.createElement('br');
-            let lable = document.createElement('lable');
-
-            lable.textContent = exerciseList[i].name
-            muscleGroup.type = 'checkbox';
-            muscleGroup.vale = exerciseList[i].name
-            muscleGroup.id = exerciseList[i].group + CreateIdList[i];
-            idList.push(muscleGroup);
-            checkedIdList.push(muscleGroup);
-            exerciseList2.push(exerciseList[i]);
-            
-            div.appendChild(muscleGroup);
-            div.appendChild(lable);
-            div.appendChild(br);
-                 
-        }
- 
-        
-    }
-
-
-
-
-    const addList = (event) => {
-        event.preventDefault();
-        let form = document.getElementById('form');
-
-        for(i = 0; i < exerciseList2.length; i++){
-            if(idList[i].checked == true){
-                
-                if(idList[i].id == checkedIdList[i].id){
-                   
-                    if(exerciseList2[i].group == selectMuscleGroup.value){
-                        let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
-                        chosenList.push(exerciseList2[i]);
-                        localStorage.setItem('chosenList', JSON.stringify(chosenList));
-                      
-
-                    }
-
-                }
-
-            }
-        }
-  
-        submit.removeEventListener('click', addList);
-        submit.addEventListener('click', createList);
-        form.reset();
-        createTable()
- 
-    }
-
-    submit.removeEventListener('click', createList);
-    submit.addEventListener('click', addList);
-    createTable()
-  
-
-
-}
-
-
-
-
-let model2 = JSON.parse(localStorage.getItem('model'));
-let weekDays2 = JSON.parse(localStorage.getItem('weekDays'));
-console.log(model2, weekDays2);
-
-const select = () => {
-
-    if(model2 != '' || weekDays2 != '') {
-        document.getElementById('model').value =  JSON.parse(localStorage.getItem('model'));
-        document.getElementById('weekDays').value =  JSON.parse(localStorage.getItem('weekDays'));
-    }
-
-}
-
-
-
-const deleteList = (index) => {
- 
-    let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
-
-       let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
-  
-    selectGroupList.splice(index, 1);
-    chosenList.splice(index, 1);
-  
-    localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
-    localStorage.setItem('chosenList', JSON.stringify(chosenList));
-    createTable()
-   
-   
-  }
-  let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
-  let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
-for(u = 0; u < selectGroupList.length; u++){
-    //deleteList(u)
-}
-for(y = 0; y < chosenList.length; y++){
-    //deleteList(y)
-}
-
-
-
-
-
-
-
-
-
-
 const init = () => {
 
     submit.addEventListener('click', createList); 
     submit2.addEventListener('click', cleanList);
     submit3.addEventListener('click', createTable);
     select();
-    createTable()
 
 }
 
