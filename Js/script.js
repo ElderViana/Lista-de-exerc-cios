@@ -202,6 +202,7 @@ const createList = (event) => {
 
     const addList = (event) => {
         event.preventDefault();
+        let form = document.getElementById('form');
 
         for(i = 0; i < exerciseList2.length; i++){
             if(idList[i].checked == true){
@@ -223,6 +224,7 @@ const createList = (event) => {
   
         submit.removeEventListener('click', addList);
         submit.addEventListener('click', createList);
+        form.reset();
         createTable()
  
     }
