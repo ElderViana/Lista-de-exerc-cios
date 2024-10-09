@@ -489,6 +489,7 @@ const init = () => {
     submit2.addEventListener('click', cleanList);
     submit3.addEventListener('click', createTable);
     select();
+    createTable()
 
 }
 
