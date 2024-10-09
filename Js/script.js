@@ -231,7 +231,7 @@ const createList = (event) => {
 
     submit.removeEventListener('click', createList);
     submit.addEventListener('click', addList);
-   
+    createTable()
   
 
 
@@ -266,6 +266,7 @@ const deleteList = (index) => {
   
     localStorage.setItem('selectGroupList', JSON.stringify(selectGroupList));
     localStorage.setItem('chosenList', JSON.stringify(chosenList));
+    createTable()
    
    
   }
