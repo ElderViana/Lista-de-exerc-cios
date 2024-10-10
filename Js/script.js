@@ -200,8 +200,8 @@ const createList = (event) => {
 
 
 
-    const addList = (event) => {
-        event.preventDefault();
+    const addList = (event2) => {
+        event2.preventDefault();
         let form = document.getElementById('form');
 
         for(i = 0; i < exerciseList2.length; i++){
@@ -226,12 +226,15 @@ const createList = (event) => {
         submit.addEventListener('click', createList);
         form.reset();
         createTable()
- 
+        submit.value = "Adicionar";
+     
     }
-
+    submit.value = "Salvar";
     submit.removeEventListener('click', createList);
     submit.addEventListener('click', addList);
     createTable()
+ 
+    
   
 
 
@@ -489,6 +492,7 @@ const init = () => {
     submit2.addEventListener('click', cleanList);
     submit3.addEventListener('click', createTable);
     select();
+    createTable()
 
 }
 
