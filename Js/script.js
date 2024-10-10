@@ -223,17 +223,17 @@ const createList = (event) => {
         }
   
         submit.removeEventListener('click', addList);
-        submit.removeEventListener('click', cleanList);
+      
         submit.addEventListener('click', createList);
-        form.reset();
+         form.reset();
         createTable()
         submit.value = "Adicionar";
      
     }
     submit.value = "Salvar";
     submit.removeEventListener('click', createList);
-    submit.addEventListener('click', addList);
-    submit.addEventListener('click', cleanList);
+   submit.addEventListener('click', addList);
+ 
     createTable()
  
     
