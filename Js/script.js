@@ -225,15 +225,16 @@ const createList = (event) => {
         submit.removeEventListener('click', addList);
       
         submit.addEventListener('click', createList);
-         form.reset();
-        createTable()
+         //form.reset();
+        createTable();
         submit.value = "Adicionar";
+       
      
     }
     submit.value = "Salvar";
     submit.removeEventListener('click', createList);
    submit.addEventListener('click', addList);
- 
+   cleanList();
     createTable()
  
     
@@ -491,7 +492,7 @@ for(y = 0; y < chosenList.length; y++){
 const init = () => {
 
     submit.addEventListener('click', createList); 
-    submit2.addEventListener('click', cleanList);
+    //submit2.addEventListener('click', cleanList);
     submit3.addEventListener('click', createTable);
     select();
     createTable()
