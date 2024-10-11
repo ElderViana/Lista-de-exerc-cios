@@ -84,7 +84,6 @@ const exerciseList = [
 ];
 
 
-const cleanList = () => {}
 
 const div = document.getElementById('list');
 const submit = document.getElementById('submit');
@@ -201,8 +200,8 @@ const createList = (event) => {
 
 
     const addList = (event2) => {
+
         event2.preventDefault();
-        let form = document.getElementById('form');
 
         for(i = 0; i < exerciseList2.length; i++){
             if(idList[i].checked == true){
@@ -222,19 +221,31 @@ const createList = (event) => {
             }
         }
   
+       
+      
+        createTable();
+        submit.value = "Limpar";
+
+        const cleanList = () => {
+            submit.removeEventListener('click', cleanList);
+            submit.addEventListener('click', createList);
+            submit.value = "Adicionar";
+            createTable();
+
+
+        }
+        
         submit.removeEventListener('click', addList);
       
-        submit.addEventListener('click', createList);
-         //form.reset();
-        createTable();
-        submit.value = "Adicionar";
+        submit.addEventListener('click', cleanList);
+
        
      
     }
     submit.value = "Salvar";
     submit.removeEventListener('click', createList);
-   submit.addEventListener('click', addList);
-   cleanList();
+    submit.addEventListener('click', addList);
+
     createTable()
  
     
@@ -265,7 +276,7 @@ const deleteList = (index) => {
  
     let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
 
-       let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
+    let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
   
     selectGroupList.splice(index, 1);
     chosenList.splice(index, 1);
@@ -382,7 +393,7 @@ for(y = 0; y < chosenList.length; y++){
                         <td>${group1.name}</td>
                         <td>${group1.series}</td>
                         <td>${group1.repetitions}</td>
-                          <td><button class="btnDelete" onclick="deleteList(${index})"><i class="fa-solid fa-trash-can"></i></</button></td>git 
+                          <td><button class="btnDelete" onclick="deleteList(${index})"><i class="fa-solid fa-trash-can"></i></</button></td>
                     </tr>`;
                     const row = tableList[a].insertRow();
                     row.innerHTML = taskContent;
@@ -492,7 +503,7 @@ for(y = 0; y < chosenList.length; y++){
 const init = () => {
 
     submit.addEventListener('click', createList); 
-    //submit2.addEventListener('click', cleanList);
+    submit2.addEventListener('click', deleteList);
     submit3.addEventListener('click', createTable);
     select();
     createTable()
