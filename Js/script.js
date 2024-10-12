@@ -287,14 +287,22 @@ const deleteList = (index) => {
    
    
   }
-  let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
-  let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
-for(u = 0; u < selectGroupList.length; u++){
-    //deleteList(u)
-}
-for(y = 0; y < chosenList.length; y++){
-    //deleteList(y)
-}
+
+  const resetList = (event) => {
+    event.preventDefault();
+    let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
+    let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
+    for(u = 0; u < selectGroupList.length; u++){
+      deleteList(0)
+    }
+    for(y = 0; y < chosenList.length; y++){
+      deleteList(0)
+    }
+
+
+
+  }
+
 
 
 
@@ -503,7 +511,7 @@ for(y = 0; y < chosenList.length; y++){
 const init = () => {
 
     submit.addEventListener('click', createList); 
-    submit2.addEventListener('click', deleteList);
+    submit2.addEventListener('click', resetList);
     submit3.addEventListener('click', createTable);
     select();
     createTable()
@@ -511,3 +519,10 @@ const init = () => {
 }
 
 init(); 
+let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
+
+let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
+  
+console.log(selectGroupList)
+console.log(chosenList)
+console.log(chosenList.length)
