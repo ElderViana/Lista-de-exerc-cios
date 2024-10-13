@@ -81,6 +81,7 @@ select
 }
 
 #muscleGroup{
+    margin-bottom: 20px;
   
 }
 .input {
@@ -89,7 +90,7 @@ select
 }
 
 .btnAdd {
-    background-color: orange;
+    background-color: rgb(9, 255, 0);
     width: 150px;
     margin-left: 100px;
 
@@ -104,7 +105,7 @@ select
     border-bottom: ridge;
     border-bottom-width:10px;
     border-right-width: 10px;
-    border-color: rgb(20, 154, 199);
+    border-color: rgb(20, 199, 139);
     width: 15%;
 
 }
