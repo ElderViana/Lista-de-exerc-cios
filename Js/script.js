@@ -181,6 +181,7 @@ const createList = (event) => {
 
             lable.textContent = exerciseList[i].name
             muscleGroup.type = 'checkbox';
+            muscleGroup.className = 'input';
             muscleGroup.vale = exerciseList[i].name
             muscleGroup.id = exerciseList[i].group + CreateIdList[i];
             idList.push(muscleGroup);

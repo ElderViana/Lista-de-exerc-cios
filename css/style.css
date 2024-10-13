@@ -72,12 +72,17 @@ select
     font-size: 1rem;
     cursor: pointer;
     margin-bottom: 10px;
+    margin-left: 100px;
   
+}
+.input {
+    margin-left: 100px;
 }
 
 .btnAdd {
     background-color: orange;
     width: 150px;
+    margin-left: 100px;
 }
 
 
