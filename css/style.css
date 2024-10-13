@@ -45,20 +45,20 @@ header {
 
 
 form {
-    display: flex;
-    justify-content: space-between;
+    display: block;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 70px;
 }
 
 input[type="text"],
 select
 {
     border-radius: 20px;
-    width: 100%;
+    width: 30%;
     padding: 5px;
     font-size: 1rem;
     cursor: pointer;
+    margin-bottom: 10px;
   
 }
 
