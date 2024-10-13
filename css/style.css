@@ -127,7 +127,14 @@ select
  
 
 }
-
+.tableSet {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+}
 
 
 .tableList {
