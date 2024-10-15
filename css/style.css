@@ -4,7 +4,16 @@
     box-sizing: border-box;
 }
 
+.combobox, .combobox2  {
+   
+    width: 100%;
+    height: 40px;
+}
+.tableList1, .tableList2, .tableList3 {
+ 
+    width: 100%;
 
+}
 
 
 
@@ -13,7 +22,7 @@ body {
     font-family: sans-serif;
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(45deg, #84f5f5 50%, #f0bab4);
+    background-color: #00FFFF;
     background-size: cover;
     background-position: center;
 }
@@ -110,10 +119,12 @@ select
 
 }
 #submit2 {
-    margin-left: 530px;
+   /* margin-left: 530px; */
     background-color: rgb(0, 153, 255);
 
-
+    position: relative;
+    bottom: 16px;
+   left: 370px;
     font-size: 15px;
     font-weight: bold;
   
@@ -127,6 +138,7 @@ select
  
 
 }
+/*
 .tableSet {
     display: flex;
     justify-content: space-between;
@@ -135,7 +147,10 @@ select
     flex-direction: column;
     align-items: center;
 }
-
+*/
+table {
+    width: 100%;
+}
 
 .tableList {
     margin-left: 10px;
@@ -172,3 +187,6 @@ tr td:nth-last-child(2) {
 }
 
 
+#exerciseList1,  #exerciseList2, #exerciseList3, #exerciseList4, #exerciseList5, #exerciseList6{
+    margin-bottom: 100px; 
+}
