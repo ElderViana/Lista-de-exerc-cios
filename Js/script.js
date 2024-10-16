@@ -89,7 +89,7 @@ const div = document.getElementById('list');
 const submit = document.getElementById('submit');
 const submit2 = document.getElementById('submit2');
 const submit3 = document.getElementById('submit3');
-
+submit2.background = 'red';
 
 const selectModel = document.getElementById('model');
 const selectWeekDays = document.getElementById('weekDays');
@@ -113,6 +113,7 @@ const createList = (event) => {
  
     if(selectModel.value != model2 || selectWeekDays.value != weekDays2 && chosenList2.length != 0){
         alert("Por favor exclua a lista de execícios antes de escolher outro modelo de treino ou outro modelo de dias da semana");
+
     }else{
         localStorage.setItem('model', JSON.stringify(model));
         localStorage.setItem('weekDays', JSON.stringify(weekDays));
