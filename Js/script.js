@@ -520,10 +520,3 @@ const init = () => {
 }
 
 init(); 
-let selectGroupList = JSON.parse(localStorage.getItem('selectGroupList')) || [];
-
-let chosenList = JSON.parse(localStorage.getItem('chosenList')) || [];
-  
-console.log(selectGroupList)
-console.log(chosenList)
-console.log(chosenList.length)
