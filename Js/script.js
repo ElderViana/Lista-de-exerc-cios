@@ -137,7 +137,11 @@ const createList = (event) => {
     }
 
     if(frequentList.length != 0){
-        alert('Por favor exclua os grupos' + ' ' + frequentList )
+       
+        let botao = document.getElementById("submit2");
+        botao.style.backgroundColor = "red";
+        botao.style.borderColor = "red"; 
+        alert('Por favor exclua os grupos' + ' ' + frequentList );
     }    
 
     switch(selectMuscleGroup.value){
@@ -221,11 +225,12 @@ const createList = (event) => {
 
             }
         }
-  
-       
+    
       
         createTable();
         submit.value = "Limpar";
+        submit.style.backgroundColor = "#73fec9";
+        submit.style.borderColor = "#04a768"; 
 
         const cleanList = () => {
             submit.removeEventListener('click', cleanList);
@@ -244,6 +249,8 @@ const createList = (event) => {
      
     }
     submit.value = "Salvar";
+    submit.style.backgroundColor = "#ffbfff";
+    submit.style.borderColor = "#ed0eed"; 
     submit.removeEventListener('click', createList);
     submit.addEventListener('click', addList);
 
@@ -513,7 +520,7 @@ const init = () => {
 
     submit.addEventListener('click', createList); 
     submit2.addEventListener('click', resetList);
-    submit3.addEventListener('click', createTable);
+    //submit3.addEventListener('click', select);
     select();
     createTable()
 

@@ -198,10 +198,28 @@ tr td:nth-last-child(2) {
     background-color: #84f5f5;
     color: rgb(231, 101, 26);
     border: none;
+    cursor: pointer;
  
 }
 
 
 #exerciseList1,  #exerciseList2, #exerciseList3, #exerciseList4, #exerciseList5, #exerciseList6{
     margin-bottom: 100px; 
+}
+
+@media only screen and (min-width: 1920px){
+
+    #submit2 {
+        left: 10px;
+    }
+
+    .combobox, .combobox2  {
+   
+        width: 100%;
+        height: 60px;
+        color: #04a768	
+    }
+
+
+
 }
