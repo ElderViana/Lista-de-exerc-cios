@@ -84,6 +84,19 @@ const exerciseList = [
 ];
 
 
+const dark = document.getElementById("dark");
+
+
+
+
+
+
+
+
+
+
+
+
 
 const div = document.getElementById('list');
 const submit = document.getElementById('submit');
@@ -139,7 +152,7 @@ const createList = (event) => {
     if(frequentList.length != 0){
        
         let botao = document.getElementById("submit2");
-        botao.style.backgroundColor = "red";
+        botao.style.backgroundColor = "#f57f54";
         botao.style.borderColor = "red"; 
         alert('Por favor exclua os grupos' + ' ' + frequentList );
     }    
@@ -526,4 +539,7 @@ const init = () => {
 
 }
 
+dark.addEventListener("change", () => {
+	document.body.classList.toggle("dark");
+});
 init(); 
